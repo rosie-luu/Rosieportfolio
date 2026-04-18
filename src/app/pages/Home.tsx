@@ -3,9 +3,9 @@ import { ArrowRight, BarChart2, ShoppingCart, Users, PenTool, Sparkles, Layout a
 import { Link } from "react-router";
 
 // Project Images
-import imgOhora from "../../imports/ohora_1.png";
-import imgVal from "../../imports/image-3.png";
-import imgSamsung from "../../imports/image-11.png";
+import imgOhora from "../../imports/ohora.png";
+import imgVal from "../../imports/valorant.png";
+import imgSamsung from "../../imports/samsung.jpg";
 import imgProfile from "../../imports/your-photo.jpg";
 
 const projects = [
