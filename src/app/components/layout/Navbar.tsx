@@ -12,7 +12,6 @@ export function Navbar() {
     { name: "Work", path: "/work" },
     { name: "The Lab", path: "/lab" },
     { name: "Resume", path: "/resume" },
-    { name: "Contact", path: "/contact" },
   ];
 
   return (

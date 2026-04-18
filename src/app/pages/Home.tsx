@@ -38,7 +38,7 @@ const skills = [
   { name: "Digital Design", detail: "Figma Prototyping & UX/UI", icon: <LayoutIcon size={24} />, color: "bg-rose-50 text-rose-700 border-rose-200" },
 ];
 
-const brands = ["Samsung", "AIA", "Yomost", "PUBG Mobile", "ohora"];
+
 
 export function Home() {
   return (
@@ -54,9 +54,12 @@ export function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="w-full lg:w-3/5"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-sm font-medium text-slate-800 mb-8 shadow-sm">
-              <span className="flex h-2 w-2 rounded-full bg-teal-400"></span>
-              Open for new opportunities
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50/80 border border-green-200/50 text-base font-semibold text-green-700 mb-8 shadow-sm backdrop-blur-sm">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+              </span>
+              Available for freelance & full-time roles
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6">
@@ -68,7 +71,7 @@ export function Home() {
             </h1>
             
             <p className="text-xl sm:text-2xl text-slate-600 max-w-2xl leading-relaxed mb-10 font-light">
-              I blend performance-driven marketing with creative technology to build campaigns that scale and experiences that stick. Currently based in Toronto.
+              A digital marketer focused on performance growth and creative experimentation. Currently pursuing a Master of Digital Media in Toronto.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -102,7 +105,7 @@ export function Home() {
             {/* Floating About Me Badge */}
             <div className="absolute -bottom-8 -left-8 sm:-left-12 p-6 bg-white/90 backdrop-blur-xl border border-slate-100 shadow-[0_20px_40px_rgba(0,0,0,0.1)] rounded-3xl max-w-[90%] sm:max-w-xs z-10 hidden sm:block">
               <p className="text-sm text-slate-600 font-medium leading-relaxed">
-                "Driven by human-centered storytelling and data."
+                "Bridging the gap between performance and creativity."
               </p>
             </div>
           </motion.div>
@@ -110,21 +113,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* Brand Logo Cloud */}
-      <section className="py-10 border-y border-slate-200/50 bg-slate-50/50">
-        <p className="text-center text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">Trusted by global brands</p>
-        <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
-          {brands.map((brand, i) => (
-            <div key={i} className="text-xl sm:text-2xl font-black tracking-tighter text-slate-800 flex items-center">
-              {brand === 'Samsung' && <span className="tracking-normal font-bold">SAMSUNG</span>}
-              {brand === 'AIA' && <span className="text-red-600 tracking-normal font-bold">AIA</span>}
-              {brand === 'Yomost' && <span className="italic text-orange-500">Yomost!</span>}
-              {brand === 'PUBG Mobile' && <span className="font-extrabold text-slate-900">PUBG <span className="font-light">MOBILE</span></span>}
-              {brand === 'ohora' && <span className="lowercase font-serif text-slate-800">ohora</span>}
-            </div>
-          ))}
-        </div>
-      </section>
+
 
       {/* About Me Details Section */}
       <section className="max-w-4xl mx-auto text-center px-4">
@@ -136,7 +125,7 @@ export function Home() {
         >
           <Sparkles className="w-10 h-10 mx-auto text-violet-400 mb-6" />
           <p className="text-xl sm:text-2xl text-slate-700 leading-relaxed font-medium">
-            I am a digital marketing professional who lives at the intersection of data and creativity. My background spans across Performance Marketing for e-commerce, Influencer Strategy for gaming giants, and Creative Production for global tech brands. Whether it's driving a <span className="text-teal-600 font-bold bg-teal-50 px-2 py-0.5 rounded-md">50% ROI for ohora USA</span> or managing <span className="text-violet-600 font-bold bg-violet-50 px-2 py-0.5 rounded-md">10M+ impressions for VALORANT</span>, my focus is always on delivering measurable impact through human-centered storytelling.
+            With over 5 years of experience in the Asian and North American markets, I’ve helped global brands scale through data-backed strategies. From driving 50% ROI in e-commerce to managing 10M+ impressions in gaming, I thrive where performance meets creativity.
           </p>
         </motion.div>
       </section>

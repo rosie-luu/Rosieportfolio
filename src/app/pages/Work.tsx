@@ -126,8 +126,12 @@ const categories = [
         theme: "peach" as ThemeType,
         icon: Zap,
         media: {
-          type: "grid-3",
-          images: [yomost1, yomost2, yomost3]
+          type: "mixed-yomost",
+          images: [yomost1, yomost2],
+          video: {
+            url: "https://www.youtube.com/watch?v=Mi1t0Ehz2OY",
+            thumbnail: "https://img.youtube.com/vi/Mi1t0Ehz2OY/hqdefault.jpg"
+          }
         }
       },
       {
@@ -181,7 +185,7 @@ const categories = [
         media: {
           type: "video",
           url: "https://www.youtube.com/watch?v=Ug5pGSXiuNE",
-          thumbnail: "https://img.youtube.com/vi/Ug5pGSXiuNE/maxresdefault.jpg"
+          thumbnail: "https://img.youtube.com/vi/Ug5pGSXiuNE/hqdefault.jpg"
         }
       },
       {
@@ -203,8 +207,12 @@ const categories = [
         theme: "blue" as ThemeType,
         icon: MonitorPlay,
         media: {
-          type: "grid-2",
-          images: [ss1, ss2]
+          type: "mixed-samsung",
+          images: [ss1],
+          video: {
+            url: "https://www.youtube.com/watch?v=xRXRbfa2W-w",
+            thumbnail: "https://img.youtube.com/vi/xRXRbfa2W-w/hqdefault.jpg"
+          }
         }
       },
       {
@@ -256,7 +264,7 @@ const categories = [
           type: "mixed-val",
           video: { 
             url: "https://www.youtube.com/watch?v=z2u-_ikqY7s", 
-            thumbnail: "https://img.youtube.com/vi/z2u-_ikqY7s/maxresdefault.jpg" 
+            thumbnail: "https://img.youtube.com/vi/z2u-_ikqY7s/hqdefault.jpg" 
           },
           images: [valSeries1, valSeries2, valSeries3, valSeries4]
         }
@@ -299,9 +307,9 @@ const categories = [
         media: {
           type: "videos-3",
           videos: [
-            { url: "https://www.youtube.com/watch?v=CFg3JYEi0wM", thumbnail: "https://img.youtube.com/vi/CFg3JYEi0wM/maxresdefault.jpg" },
-            { url: "https://www.youtube.com/watch?v=vRBqrr7d_Ro", thumbnail: "https://img.youtube.com/vi/vRBqrr7d_Ro/maxresdefault.jpg" },
-            { url: "https://www.youtube.com/watch?v=ipTCO8Rtyrc", thumbnail: "https://img.youtube.com/vi/ipTCO8Rtyrc/maxresdefault.jpg" }
+            { url: "https://www.youtube.com/watch?v=CFg3JYEi0wM", thumbnail: "https://img.youtube.com/vi/CFg3JYEi0wM/hqdefault.jpg" },
+            { url: "https://www.youtube.com/watch?v=vRBqrr7d_Ro", thumbnail: "https://img.youtube.com/vi/vRBqrr7d_Ro/hqdefault.jpg" },
+            { url: "https://www.youtube.com/watch?v=ipTCO8Rtyrc", thumbnail: "https://img.youtube.com/vi/ipTCO8Rtyrc/hqdefault.jpg" }
           ]
         }
       }
@@ -309,7 +317,7 @@ const categories = [
   }
 ];
 
-const clients = ["VALORANT", "Samsung", "ohora", "ReferReach", "VNG Corporation", "Riot Games", "Yomost", "AIA"];
+const clients = ["Riot Games", "Samsung", "ohora USA", "Yomost", "... and more"];
 
 // Reusable image component with physical hover scale & full-screen Lightbox
 const MediaImage = ({ img, alt, onOpen }: { img: string, alt: string, onOpen: () => void }) => (
@@ -421,10 +429,49 @@ export function Work() {
 
     if (project.media.type === 'grid-4') {
       return (
-        <div className="grid grid-cols-2 grid-rows-2 gap-3 aspect-[4/3] w-full">
+        <div className="grid grid-cols-2 grid-rows-2 gap-3 aspect-[4/5] sm:aspect-[3/4] w-full">
           {project.media.images.map((img: string, i: number) => (
             <MediaImage key={i} img={img} alt={`${project.title} ${i + 1}`} onOpen={() => setSelectedImg(img)} />
           ))}
+        </div>
+      );
+    }
+
+    if (project.media.type === 'mixed-yomost') {
+      return (
+        <div className="grid grid-cols-2 gap-3 aspect-[4/3] sm:aspect-[5/4] w-full">
+          <div className="h-full w-full">
+            <MediaImage img={project.media.images[0]} alt={`${project.title} 1`} onOpen={() => setSelectedImg(project.media.images[0])} />
+          </div>
+          <div className="grid grid-rows-2 gap-3">
+            <a href={project.media.video.url} target="_blank" rel="noopener noreferrer" className="relative w-full h-full block rounded-[1.5rem] overflow-hidden shadow-md group bg-slate-900">
+              <img src={project.media.video.thumbnail} alt="Video" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-slate-900/30 group-hover:bg-slate-900/10 transition-colors duration-500 flex items-center justify-center">
+                <div className="w-12 h-12 bg-white/90 backdrop-blur-md text-rose-600 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
+                  <Play className="ml-1" size={24} fill="currentColor" />
+                </div>
+              </div>
+            </a>
+            <MediaImage img={project.media.images[1]} alt={`${project.title} 2`} onOpen={() => setSelectedImg(project.media.images[1])} />
+          </div>
+        </div>
+      );
+    }
+
+    if (project.media.type === 'mixed-samsung') {
+      return (
+        <div className="flex flex-col gap-3 w-full">
+          <a href={project.media.video.url} target="_blank" rel="noopener noreferrer" className="relative aspect-video w-full block rounded-[1.5rem] overflow-hidden shadow-md group bg-slate-900">
+            <img src={project.media.video.thumbnail} alt="Video" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+            <div className="absolute inset-0 bg-slate-900/30 group-hover:bg-slate-900/10 transition-colors duration-500 flex items-center justify-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/90 backdrop-blur-md text-rose-600 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
+                <Play className="ml-1.5" size={32} fill="currentColor" />
+              </div>
+            </div>
+          </a>
+          <div className="relative aspect-video w-full">
+            <MediaImage img={project.media.images[0]} alt={`${project.title} 1`} onOpen={() => setSelectedImg(project.media.images[0])} />
+          </div>
         </div>
       );
     }
@@ -634,9 +681,11 @@ export function Work() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="px-6 py-4 rounded-2xl bg-white/40 border border-slate-200 backdrop-blur-sm shadow-sm hover:bg-white hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-default"
+              className={client === "... and more" ? "px-6 py-4 rounded-2xl cursor-default" : "px-6 py-4 rounded-2xl bg-white/40 border border-slate-200 backdrop-blur-sm shadow-sm hover:bg-white hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-default"}
             >
-              <span className="text-xl font-extrabold text-slate-800 tracking-tight">{client}</span>
+              <span className={`text-xl tracking-tight ${client === "... and more" ? "font-medium text-slate-500 italic" : "font-extrabold text-slate-800"}`}>
+                {client}
+              </span>
             </motion.div>
           ))}
         </div>

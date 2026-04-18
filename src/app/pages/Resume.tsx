@@ -1,166 +1,352 @@
 import { motion } from "motion/react";
-import { Download, GraduationCap, Briefcase } from "lucide-react";
+import { Download, GraduationCap, Briefcase, Award, Sparkles } from "lucide-react";
+import { ReactNode } from "react";
+
+const RESUME_LINK = "https://drive.google.com/file/d/1VA0tAa2ZYjrghcSCSuXh19q2xL3jChLg/view?usp=sharing";
+
+// Theme definitions to avoid dynamic class issues in Tailwind
+const themes = {
+  blue: {
+    bg: "bg-blue-50",
+    text: "text-blue-600",
+    border: "border-blue-400",
+    bullet: "bg-blue-300"
+  },
+  emerald: {
+    bg: "bg-emerald-50",
+    text: "text-emerald-600",
+    border: "border-emerald-400",
+    bullet: "bg-emerald-300"
+  },
+  violet: {
+    bg: "bg-violet-50",
+    text: "text-violet-600",
+    border: "border-violet-400",
+    bullet: "bg-violet-300"
+  },
+  rose: {
+    bg: "bg-rose-50",
+    text: "text-rose-600",
+    border: "border-rose-400",
+    bullet: "bg-rose-300"
+  }
+};
+
+type ThemeType = keyof typeof themes;
+
+interface TimelineItem {
+  role: string;
+  company: string;
+  period: string;
+  bullets: ReactNode[];
+}
+
+function TimelineSection({ 
+  title, 
+  icon: Icon, 
+  items, 
+  themeName 
+}: { 
+  title: string; 
+  icon: any; 
+  items: TimelineItem[]; 
+  themeName: ThemeType;
+}) {
+  const theme = themes[themeName];
+
+  return (
+    <section className="mb-24">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="flex items-center gap-4 mb-10"
+      >
+        <div className={`p-3 rounded-2xl ${theme.bg} ${theme.text} shadow-sm border border-white`}>
+          <Icon size={28} />
+        </div>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">{title}</h2>
+      </motion.div>
+
+      <div className="relative">
+        {/* The thin line on the left */}
+        <div className="absolute left-[7px] top-3 bottom-0 w-px bg-slate-200 shadow-sm" />
+
+        <div className="space-y-16">
+          {items.map((item, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, x: -20, y: 10 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="relative pl-10 md:pl-14"
+            >
+              {/* Timeline Dot */}
+              <div className={`absolute left-0 top-[7px] w-[15px] h-[15px] rounded-full bg-white border-4 ${theme.border} shadow-sm z-10`} />
+
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 md:gap-6 mb-4">
+                <div className="flex-1">
+                  <h3 className="text-2xl font-extrabold text-slate-900 leading-tight">{item.role}</h3>
+                  <h4 className={`text-lg font-bold ${theme.text} mt-1 tracking-wide`}>{item.company}</h4>
+                </div>
+                <div className="shrink-0 mt-1 md:mt-0">
+                  <span className="inline-block px-4 py-1.5 rounded-full bg-slate-100 text-sm font-bold text-slate-600 border border-slate-200/60 shadow-sm">
+                    {item.period}
+                  </span>
+                </div>
+              </div>
+
+              {item.bullets.length > 0 && (
+                <ul className="space-y-4 mt-5">
+                  {item.bullets.map((bullet, i) => (
+                    <li key={i} className="flex items-start gap-4">
+                      <span className={`mt-2.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${theme.bullet}`} />
+                      <div className="text-slate-600 font-medium leading-relaxed text-[15px] md:text-base">
+                        {bullet}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const CTAButton = ({ text = "Download Full Resume" }: { text?: string }) => (
+  <a
+    href={RESUME_LINK}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-slate-900 text-white font-bold shadow-[0_10px_30px_rgba(15,23,42,0.3)] hover:bg-slate-800 hover:shadow-[0_10px_40px_rgba(15,23,42,0.4)] transition-all duration-300 group hover:-translate-y-1"
+  >
+    <Download size={20} className="group-hover:-translate-y-0.5 transition-transform" />
+    <span>{text}</span>
+  </a>
+);
 
 export function Resume() {
-  const experiences = [
+  const experienceData: TimelineItem[] = [
     {
-      year: "2024 - 2026",
-      title: "Master of Digital Media",
-      company: "Toronto Metropolitan University (TMU)",
-      type: "education",
-      details: [
-        "Focused on Interaction Design, Creative AI, and Digital Product Strategy.",
-        "Developed 'Alibi.ai', a speculative future product utilizing Sora AI to generate synthetic digital footprints.",
-        "Designed and prototyped 'Launchpad', an interactive career simulation game.",
-      ]
-    },
-    {
-      year: "2023 - 2024",
-      title: "Digital Marketing Specialist",
+      role: "Senior Influencer Marketing Specialist",
       company: "ohora USA",
-      type: "work",
-      details: [
-        "Led cross-channel performance marketing strategies across Meta Ads and Google Ads.",
-        "Built and nurtured a community of 2,000+ followers, achieving a 50% increase in Return on Ad Spend (ROI).",
-        "Optimized e-commerce conversion funnels, directly impacting quarterly revenue growth.",
+      period: "Jan 2025 – Present",
+      bullets: [
+        <span key="1">Managed influencer-led e-commerce campaigns, achieving a <strong className="font-extrabold text-slate-900 bg-emerald-100/50 px-1 py-0.5 rounded">50%+ ROI</strong> and <strong className="font-extrabold text-slate-900 bg-emerald-100/50 px-1 py-0.5 rounded">30% MoM</strong> engagement growth.</span>,
+        <span key="2">Scaled a dedicated UGC hub to <strong className="font-extrabold text-slate-900 bg-emerald-100/50 px-1 py-0.5 rounded">2,000+ followers</strong>, improving creator-product fit and conversion rates.</span>
       ]
     },
     {
-      year: "2022 - 2023",
-      title: "B2B Marketing Lead",
-      company: "ReferReach",
-      type: "work",
-      details: [
-        "Spearheaded B2B lead generation campaigns for major trade events including the Singapore Business Show.",
-        "Captured a record-breaking 50% conversion rate for enterprise networking signups.",
-        "Streamlined the lead-capture flow and automated email nurturing sequences.",
+      role: "Marketing Executive",
+      company: "ReferReach / HashHire",
+      period: "Aug 2023 – Dec 2024",
+      bullets: [
+        <span key="1">Optimized digital touchpoints and B2B content strategy, resulting in a <strong className="font-extrabold text-slate-900 bg-emerald-100/50 px-1 py-0.5 rounded">40% increase</strong> in CTR.</span>,
+        <span key="2">Led on-site promotions at international trade shows, converting <strong className="font-extrabold text-slate-900 bg-emerald-100/50 px-1 py-0.5 rounded">50%</strong> of visitors into active app downloads.</span>
       ]
     },
     {
-      year: "2021 - 2022",
-      title: "Postgraduate Digital Media Marketing",
-      company: "George Brown College",
-      type: "education",
-      details: [
-        "Specialized in advanced digital analytics, social media strategy, and paid media execution.",
-        "Graduated with Honors.",
-      ]
-    },
-    {
-      year: "2019 - 2021",
-      title: "User Acquisition Specialist",
+      role: "Marketing Executive",
       company: "VNG Corporation",
-      type: "work",
-      details: [
-        "Engineered scalable user acquisition campaigns for top-tier esports and mobile game titles.",
-        "Drove consistent 20-30% Month-over-Month (MoM) growth in Monthly Active Users (MAU).",
-        "Conducted extensive A/B testing on ad creatives to lower Cost Per Install (CPI).",
+      period: "Apr 2022 – May 2023",
+      bullets: [
+        <span key="1">Orchestrated multi-channel strategies for gaming giants, achieving <strong className="font-extrabold text-slate-900 bg-emerald-100/50 px-1 py-0.5 rounded">5M+ reach</strong> and a <strong className="font-extrabold text-slate-900 bg-emerald-100/50 px-1 py-0.5 rounded">20-30% increase</strong> in MAU.</span>,
+        <span key="2">Executed social listening and trend research to drive high-engagement activations with an average <strong className="font-extrabold text-slate-900 bg-emerald-100/50 px-1 py-0.5 rounded">6K CCU</strong>.</span>
       ]
     },
     {
-      year: "2017 - 2021",
-      title: "Bachelor of Marketing",
-      company: "University of Economics Ho Chi Minh City (UEH)",
-      type: "education",
-      details: [
-        "Built foundational knowledge in consumer behavior, traditional advertising, and market research.",
+      role: "Account Executive",
+      company: "Circus Digital",
+      period: "June 2021 – Apr 2022",
+      bullets: [
+        <span key="1">Managed Always-on (AWO) content and production for creative campaigns, ensuring quality and timeline across cross-functional teams.</span>,
+        <span key="2">Coordinated with production houses and third-party vendors to deliver high-fidelity assets that met strict brand guidelines.</span>
+      ]
+    },
+    {
+      role: "Account Executive",
+      company: "Wunderman Thompson",
+      period: "Dec 2020 – June 2021",
+      bullets: [
+        <span key="1">Supported daily operations for global FMCG brands (Juicy Milk & Beverages), ensuring smooth campaign execution.</span>,
+        <span key="2">Collaborated with Strategy and Media teams to produce data-driven post-campaign reports for key stakeholders.</span>
       ]
     }
   ];
 
+  const educationData: TimelineItem[] = [
+    {
+      role: "Master of Digital Media",
+      company: "Toronto Metropolitan University",
+      period: "Expected Graduation 2026",
+      bullets: [
+        <span key="1">Focus: Interaction Design, Creative AI, and Narrative Production.</span>
+      ]
+    },
+    {
+      role: "Marketing Management - Digital Media (Post-grad)",
+      company: "George Brown College",
+      period: "2024 – 2025",
+      bullets: [
+        <span key="1">Focus: Omni-channel Marketing, SEO/SEM, and Digital Analytics.</span>
+      ]
+    },
+    {
+      role: "Bachelor of Marketing",
+      company: "University of Economics Ho Chi Minh City",
+      period: "2017 – 2021",
+      bullets: []
+    },
+    {
+      role: "High School",
+      company: "Tran Dai Nghia High School for The Gifted",
+      period: "2014 – 2017",
+      bullets: []
+    }
+  ];
+
+  const leadershipData: TimelineItem[] = [
+    {
+      role: "Event & Internal Relations",
+      company: "Marketing Club of UEH (MarC)",
+      period: "2018 – 2020",
+      bullets: [
+        <span key="1">Marketing 48H Challenge: Organized a large-scale marketing contest for over <strong className="font-extrabold text-slate-900 bg-rose-100/50 px-1 py-0.5 rounded">250 participants</strong>.</span>,
+        <span key="2">Plasticphobia Campaign: Led a sustainability initiative reaching <strong className="font-extrabold text-slate-900 bg-rose-100/50 px-1 py-0.5 rounded">20,000+ people</strong> on social media and <strong className="font-extrabold text-slate-900 bg-rose-100/50 px-1 py-0.5 rounded">200+ offline</strong> participants.</span>,
+        <span key="3">Managed sponsor relations and internal team activities to drive club engagement.</span>
+      ]
+    }
+  ];
+
+  const skillsData = [
+    {
+      category: "Strategy",
+      items: ["Performance Marketing", "Influencer Strategy", "Campaign Planning"],
+      theme: "emerald" as ThemeType
+    },
+    {
+      category: "Technical",
+      items: ["JavaScript", "HTML/CSS", "Shopify", "GA4", "Meta & Google Ads", "MailerLite"],
+      theme: "blue" as ThemeType
+    },
+    {
+      category: "Creative",
+      items: ["Figma", "UX Optimization", "Content Production", "AI-assisted Design"],
+      theme: "violet" as ThemeType
+    }
+  ];
+
   return (
-    <div className="space-y-24 pb-24 font-sans relative" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+    <div className="space-y-16 pb-32 font-sans relative" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       {/* Header */}
       <section className="pt-12 lg:pt-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl"
+          className="max-w-4xl"
         >
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
-            The <span className="text-orange-500">Journey</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-slate-200/60 text-sm font-bold text-slate-700 mb-6 shadow-sm">
+            <Sparkles size={16} className="text-orange-500" />
+            Curriculum Vitae
+          </div>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-8 leading-tight">
+            The <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-rose-500">Journey.</span>
           </h1>
-          <p className="text-xl text-slate-600 font-light leading-relaxed">
+          <p className="text-xl text-slate-600 font-medium leading-relaxed max-w-3xl mb-10">
             A comprehensive look at my professional and academic background, tracing the evolution from traditional marketing to creative technology.
           </p>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <CTAButton />
+          </motion.div>
         </motion.div>
       </section>
 
-      {/* Vertical Timeline */}
-      <section className="relative">
-        <div className="absolute left-4 md:left-1/2 md:-ml-px top-0 bottom-0 w-0.5 bg-slate-200" />
+      <div className="max-w-4xl pt-8">
+        <TimelineSection 
+          title="1. Professional Experience" 
+          icon={Briefcase} 
+          items={experienceData} 
+          themeName="emerald" 
+        />
 
-        <div className="space-y-12">
-          {experiences.map((exp, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className={`relative flex flex-col md:flex-row items-start ${
-                idx % 2 === 0 ? "md:flex-row-reverse" : ""
-              }`}
-            >
-              {/* Timeline Dot */}
-              <div className="absolute left-4 md:left-1/2 -ml-3 mt-1.5 w-6 h-6 rounded-full bg-white border-4 border-slate-200 shadow-sm z-10 flex items-center justify-center">
-                <div className={`w-2 h-2 rounded-full ${exp.type === 'education' ? 'bg-orange-400' : 'bg-teal-400'}`} />
-              </div>
+        <TimelineSection 
+          title="2. Education" 
+          icon={GraduationCap} 
+          items={educationData} 
+          themeName="blue" 
+        />
 
-              {/* Year Label */}
-              <div className={`pl-12 md:pl-0 w-full md:w-1/2 flex ${idx % 2 === 0 ? "md:justify-start md:pl-16" : "md:justify-end md:pr-16"} pt-1`}>
-                <span className="text-lg font-bold text-slate-400 tracking-wider">
-                  {exp.year}
-                </span>
-              </div>
+        <TimelineSection 
+          title="3. Leadership & Projects" 
+          icon={Award} 
+          items={leadershipData} 
+          themeName="rose" 
+        />
 
-              {/* Content Box */}
-              <div className={`mt-4 md:mt-0 pl-12 md:pl-0 w-full md:w-1/2 ${idx % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}>
-                <div className={`p-8 rounded-3xl bg-white border border-slate-200 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgb(0,0,0,0.06)] transition-shadow duration-300 relative overflow-hidden group`}>
-                  {/* Subtle Background Accent */}
-                  <div className={`absolute top-0 left-0 w-1.5 h-full ${exp.type === 'education' ? 'bg-orange-400' : 'bg-teal-400'}`} />
-                  
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className={`p-2 rounded-xl ${exp.type === 'education' ? 'bg-orange-50 text-orange-600' : 'bg-teal-50 text-teal-600'}`}>
-                      {exp.type === 'education' ? <GraduationCap size={20} /> : <Briefcase size={20} />}
-                    </div>
-                    <h3 className="text-2xl font-extrabold text-slate-900 leading-tight">
-                      {exp.title}
-                    </h3>
-                  </div>
+        {/* 4. Skills (Tag format) */}
+        <section className="mb-24">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-4 mb-10"
+          >
+            <div className="p-3 rounded-2xl bg-violet-50 text-violet-600 shadow-sm border border-white">
+              <Sparkles size={28} />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">4. Skills</h2>
+          </motion.div>
 
-                  <h4 className="text-lg font-bold text-slate-500 mb-6 uppercase tracking-wider">
-                    {exp.company}
-                  </h4>
-
-                  <ul className="space-y-3">
-                    {exp.details.map((detail, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <span className={`mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0 ${exp.type === 'education' ? 'bg-orange-300' : 'bg-teal-300'}`} />
-                        <span className="text-slate-600 font-medium leading-relaxed">
-                          {detail}
-                        </span>
-                      </li>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {skillsData.map((skillGroup, idx) => {
+              const theme = themes[skillGroup.theme];
+              return (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="bg-white/60 backdrop-blur-xl border border-white/60 p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
+                >
+                  <h3 className={`text-xl font-extrabold ${theme.text} mb-6 tracking-wide`}>
+                    {skillGroup.category}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {skillGroup.items.map((item, i) => (
+                      <span 
+                        key={i} 
+                        className={`px-4 py-2 rounded-full text-sm font-bold bg-white border border-slate-200/60 shadow-sm text-slate-700 hover:-translate-y-0.5 transition-transform cursor-default`}
+                      >
+                        {item}
+                      </span>
                     ))}
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
 
-      {/* Floating Action Button */}
-      <motion.a
-        href="#"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="fixed bottom-8 right-8 z-50 flex items-center gap-3 px-6 py-4 rounded-full bg-slate-900 text-white font-bold shadow-[0_10px_30px_rgba(15,23,42,0.3)] border border-slate-700 hover:bg-slate-800 transition-colors group"
-      >
-        <Download size={20} className="group-hover:-translate-y-1 transition-transform" />
-        <span className="hidden sm:inline">Download PDF</span>
-      </motion.a>
+        {/* Bottom CTA */}
+        <section className="pt-8 border-t border-slate-200 flex flex-col items-center text-center">
+          <h2 className="text-2xl font-extrabold text-slate-900 mb-4">Want a physical copy?</h2>
+          <p className="text-slate-500 font-medium mb-8 max-w-md">Download my full resume as a PDF document for printing or offline reading.</p>
+          <CTAButton text="Download Full Resume" />
+        </section>
+      </div>
     </div>
   );
 }

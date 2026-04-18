@@ -4,7 +4,6 @@ import { Home } from "./pages/Home";
 import { Work } from "./pages/Work";
 import { Lab } from "./pages/Lab";
 import { Resume } from "./pages/Resume";
-import { Contact } from "./pages/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +14,6 @@ export const router = createBrowserRouter([
       { path: "work", Component: Work },
       { path: "lab", Component: Lab },
       { path: "resume", Component: Resume },
-      { path: "contact", Component: Contact },
     ],
   },
 ]);
