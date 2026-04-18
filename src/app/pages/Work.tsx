@@ -8,8 +8,8 @@ import yomost2 from "../../imports/image-1.png";
 import yomost3 from "../../imports/image-2.png";
 
 // VALORANT: '1 YEAR' Anniversary Campaign
-import val1 from "../../imports/image-3.png";
-import val2 from "../../imports/image-4.png";
+import val1 from "../../imports/valorant1nambomman.png";
+import val2 from "../../imports/valorant1namtheanh.jpg";
 import val3 from "../../imports/image-5.png";
 import val4 from "../../imports/image-6.png";
 
