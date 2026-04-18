@@ -16,5 +16,5 @@ export const router = createHashRouter([
       { path: "resume", Component: Resume },
     ],
   },
-],
-                                          { basename: "/Rosieportfolio" });
+]
+);
