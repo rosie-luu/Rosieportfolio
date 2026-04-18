@@ -2,13 +2,13 @@ import { motion } from "motion/react";
 import { Code2, Layout, Smartphone, Shield, Bot, Gamepad2, Sparkles, Target, Lightbulb, PenTool, Image as ImageIcon, ExternalLink, Play, AudioLines, Video, Cpu, Figma, Box, Network, Database, FileCode2, Pen, Search } from "lucide-react";
 
 // Project Images
-import imgOhora from "../../imports/ohora_1.png";
-import imgYahoo from "../../imports/image-1.png";
-import imgAlibi from "../../imports/image-2.png";
-import imgAIEmo from "../../imports/image-4.png";
-import imgAITarot from "../../imports/image-5.png";
-import imgNPC from "../../imports/image-6.png";
-import imgLaunchpad from "../../imports/image-10.png";
+import imgOhora from "../../imports/ohoralab.png";
+import imgYahoo from "../../imports/yahoo.png";
+import imgAlibi from "../../imports/Alibi.png";
+import imgAIEmo from "../../imports/AIemotion.png";
+import imgAITarot from "../../imports/AItarot.png";
+import imgNPC from "../../imports/NPC.png";
+import imgLaunchpad from "../../imports/Launchpad.png";
 import imgBarkBuddy from "../../imports/BarkBuddy.png";
 
 type ThemeType = 'peach' | 'lavender' | 'mint' | 'rose' | 'blue';
