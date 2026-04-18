@@ -95,7 +95,7 @@ export function Home() {
           >
             <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/60 bg-slate-100 rotate-2 hover:rotate-0 transition-transform duration-500">
               <img 
-                src="https://images.unsplash.com/photo-1572994315280-5964e2cd990e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBlbmVyZ2V0aWMlMjBhc2lhbiUyMHlvdW5nJTIwd29tYW4lMjBwb3J0cmFpdHxlbnwxfHx8fDE3NzQ5NDIwMzB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
+                src="https://imgur.com/a/dh5oIgS" 
                 alt="Rosie Luu" 
                 className="w-full h-full object-cover"
               />
