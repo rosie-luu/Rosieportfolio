@@ -5,8 +5,8 @@ import { Link } from "react-router";
 // Project Images
 import imgOhora from "../../imports/ohora.png";
 import imgVal from "../../imports/valorant.png";
-import imgSamsung from "../../imports/samsung.jpg";
-import imgProfile from "../../imports/your-photo.jpeg";
+import imgSamsung from "../../imports/samsung.jpeg";
+import imgProfile from "../../imports/your-photo.jpg";
 
 const projects = [
   {
