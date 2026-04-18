@@ -6,6 +6,7 @@ import { Link } from "react-router";
 import imgOhora from "../../imports/ohora_1.png";
 import imgVal from "../../imports/image-3.png";
 import imgSamsung from "../../imports/image-11.png";
+import imgProfile from "../../imports/your-photo.jpg";
 
 const projects = [
   {
@@ -95,7 +96,7 @@ export function Home() {
           >
             <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/60 bg-slate-100 rotate-2 hover:rotate-0 transition-transform duration-500">
               <img 
-                src="<https://imgur.com/qG2RlRg>" 
+                src={imgProfile} 
                 alt="Rosie Luu" 
                 className="w-full h-full object-cover"
               />
