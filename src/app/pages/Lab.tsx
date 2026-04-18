@@ -10,6 +10,8 @@ import imgAITarot from "../../imports/AItarot.png";
 import imgNPC from "../../imports/NPC.png";
 import imgLaunchpad from "../../imports/Launchpad.png";
 import imgBarkBuddy from "../../imports/BarkBuddy.png";
+import imgMoonDrawer from "../../imports/moondrawer.png";
+import imgMetroPets from "../../imports/Metropets.png";
 
 type ThemeType = 'peach' | 'lavender' | 'mint' | 'rose' | 'blue';
 
@@ -95,6 +97,7 @@ const labCategories = [
         ],
         theme: "rose" as ThemeType,
         icon: Sparkles,
+        image: imgMoonDrawer,
         link: "https://www.continuum.social/",
         linkText: "Live Demo"
       }
@@ -269,6 +272,7 @@ const labCategories = [
         ],
         theme: "mint" as ThemeType,
         icon: Layout,
+        image: imgMetroPets,
         link: "https://zxm3332872-glitch.github.io/MetroPets/donation.html",
         linkText: "View Website"
       },
