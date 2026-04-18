@@ -16,4 +16,5 @@ export const router = createBrowserRouter([
       { path: "resume", Component: Resume },
     ],
   },
-]);
+],
+                                          { basename: "/Rosieportfolio" });
