@@ -95,7 +95,7 @@ export function Home() {
           >
             <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/60 bg-slate-100 rotate-2 hover:rotate-0 transition-transform duration-500">
               <img 
-                src="<blockquote class="imgur-embed-pub" lang="en" data-id="qG2RlRg"><a href="https://imgur.com/qG2RlRg">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>" 
+                src="<https://imgur.com/qG2RlRg>" 
                 alt="Rosie Luu" 
                 className="w-full h-full object-cover"
               />
