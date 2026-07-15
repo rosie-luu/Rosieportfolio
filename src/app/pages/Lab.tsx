@@ -76,25 +76,25 @@ const labCategories = [
       {
         course: "AR/VR In Practice, Immersive Realities",
         title: "Joselyn, Come Play - Standalone VR Experience",
-        goal: "To build a narrative-driven VR horror escape experience where players piece together a buried memory through spatial interaction.",
+        goal: "A VR horror experience that turns a buried childhood memory into a story players uncover room by room.",
         descriptionTitle: "The Context",
-        description: "A standalone VR dreamcore horror experience across 3 levels with escape-room mechanics. Joselyn wakes up in a dream world and must collect memory objects to recall a childhood swimming accident where she accidentally pushed her best friend Abigail, who drowned — the ghost haunting her is Abigail. Players move from the Bedroom (boombox, light switch, stars, flip phone) to unlock the door, to the Playground (camera, teddy bear, portal appears), and finally the Pool (rubber duck, bloody towel, friendship bracelet), leading to two endings: Stay (hand the bracelet to the ghost and remain trapped forever) or Leave (drop the bracelet and escape).",
+        description: "Joselyn wakes up trapped in a dreamlike world and must piece together a memory she's been running from — the accidental loss of her childhood best friend. Players explore three surreal spaces, collecting objects that unlock the truth, building to one of two emotional endings.",
         insightTitle: "Strategic Insight",
         insight: [
-          "Learned how to translate a creative narrative concept into a fully realized **3D environment**.",
-          "Gained hands-on experience **modeling assets** and building **Blueprint-driven interactions** for VR."
+          "Turned a personal, emotional story into an interactive experience — proving narrative and creative direction skills translate directly into **immersive, spatial storytelling**.",
+          "Learned to build a complete world from scratch in **Unreal Engine**, from environment design to player interaction."
         ],
         executionTitle: "Execution",
         execution: [
-          "Brainstormed a **2000s dreamcore horror** concept centered on memory and guilt.",
-          "Modeled key **3D assets** used as memory objects and environment props.",
-          "Built **teleport locomotion**, **raycast object highlighting**, and **grip/trigger interactions** in Unreal Engine.",
-          "Set up **Blueprints** to gate progression behind object collection and drive the two branching endings."
+          "Wrote the **horror narrative**, character backstory, and two branching endings.",
+          "Designed and built **three explorable 3D environments** in Unreal Engine.",
+          "Modeled key story props and set up **intuitive VR interactions** so players uncover the story by exploring.",
+          "Built the **game logic** connecting objects, puzzles, and story progression."
         ],
         tags: [
           { name: "Unreal Engine", icon: Cpu },
           { name: "3D Modeling", icon: Box },
-          { name: "XR", icon: Gamepad2 }
+          { name: "Virtual Reality", icon: Gamepad2 }
         ],
         theme: "lavender" as ThemeType,
         icon: Box
