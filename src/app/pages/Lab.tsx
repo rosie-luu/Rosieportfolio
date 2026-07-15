@@ -70,7 +70,39 @@ const themes: Record<ThemeType, { bg: string; border: string; text: string; icon
 
 const labCategories = [
   {
-    title: "I. Capstone Project",
+    title: "I. XR & Real-Time 3D Production",
+    subtitle: "Designing immersive, spatial experiences with VR/AR and real-time 3D tools.",
+    projects: [
+      {
+        course: "AR/VR In Practice, Immersive Realities",
+        title: "Joselyn, Come Play - Standalone VR Experience",
+        goal: "To build a narrative-driven VR horror escape experience where players piece together a buried memory through spatial interaction.",
+        descriptionTitle: "The Context",
+        description: "A standalone VR dreamcore horror experience across 3 levels with escape-room mechanics. Joselyn wakes up in a dream world and must collect memory objects to recall a childhood swimming accident where she accidentally pushed her best friend Abigail, who drowned — the ghost haunting her is Abigail. Players move from the Bedroom (boombox, light switch, stars, flip phone) to unlock the door, to the Playground (camera, teddy bear, portal appears), and finally the Pool (rubber duck, bloody towel, friendship bracelet), leading to two endings: Stay (hand the bracelet to the ghost and remain trapped forever) or Leave (drop the bracelet and escape).",
+        insightTitle: "Strategic Insight",
+        insight: [
+          "Learned how to translate a creative narrative concept into a fully realized **3D environment**.",
+          "Gained hands-on experience **modeling assets** and building **Blueprint-driven interactions** for VR."
+        ],
+        executionTitle: "Execution",
+        execution: [
+          "Brainstormed a **2000s dreamcore horror** concept centered on memory and guilt.",
+          "Modeled key **3D assets** used as memory objects and environment props.",
+          "Built **teleport locomotion**, **raycast object highlighting**, and **grip/trigger interactions** in Unreal Engine.",
+          "Set up **Blueprints** to gate progression behind object collection and drive the two branching endings."
+        ],
+        tags: [
+          { name: "Unreal Engine", icon: Cpu },
+          { name: "3D Modeling", icon: Box },
+          { name: "XR", icon: Gamepad2 }
+        ],
+        theme: "lavender" as ThemeType,
+        icon: Box
+      }
+    ]
+  },
+  {
+    title: "II. Capstone Project",
     subtitle: "Industry collaborations and major academic milestones.",
     projects: [
       {
@@ -104,7 +136,7 @@ const labCategories = [
     ]
   },
   {
-    title: "II. Creative AI & Future Concepts",
+    title: "III. Creative AI & Future Concepts",
     subtitle: "Exploring how AI can enhance creativity and personal privacy.",
     projects: [
       {
@@ -246,7 +278,7 @@ const labCategories = [
     ]
   },
   {
-    title: "III. Web Development & UX Design",
+    title: "IV. Web Development & UX Design",
     subtitle: "Bridging the gap between marketing strategy and technical execution.",
     projects: [
       {
@@ -357,7 +389,7 @@ const labCategories = [
     ]
   },
   {
-    title: "IV. Game & Prototyping",
+    title: "V. Game & Prototyping",
     subtitle: "Applying narrative logic and balancing to interactive experiences.",
     projects: [
       {
