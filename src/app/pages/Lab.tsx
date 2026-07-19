@@ -14,15 +14,15 @@ import imgMoonDrawer from "../../imports/moondrawer.png";
 import imgMetroPets from "../../imports/Metropets.png";
 
 // ohora Brand & Creative Direction Case Study
-import ohoraBrandBoardCover from "../../imports/ohora-brand-board.png";
+import ohoraBrandBoardCover from "../../imports/ohoraCaseBrandBoardCover.png";
 import ohoraBrandBoardFull from "../../imports/ohora-brand-board.png";
-import ohoraSocialCover from "../../imports/ohora-social-creatives.png";
+import ohoraSocialCover from "../../imports/ohoraCaseSocialCover.png";
 import ohoraSocialFull from "../../imports/ohora-social-creatives.png";
-import ohoraPackagingCover from "../../imports/ohora-packaging-mockups.png";
+import ohoraPackagingCover from "../../imports/ohoraCasePackagingCover.png";
 import ohoraPackagingFull from "../../imports/ohora-packaging-mockups.png";
 import ohoraPosterFull from "../../imports/ohora-endless-summer-poster.png";
 import ohoraBillboardFull from "../../imports/ohora-endless-summer-billboard.png";
-import ohoraProposalCover from "../../imports/ohora-proposal-overview.png";
+import ohoraProposalCover from "../../imports/ohoraCaseProposalCover.png";
 import ohoraProposalFull from "../../imports/ohora-proposal-overview.png";
 
 type ThemeType = 'peach' | 'lavender' | 'mint' | 'rose' | 'blue';
