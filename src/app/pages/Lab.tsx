@@ -19,7 +19,7 @@ import ohoraBrandBoardFull from "../../imports/ohora-brand-board.png";
 import ohoraSocialCover from "../../imports/ohora-social-creatives.png";
 import ohoraSocialFull from "../../imports/ohora-social-creatives.png";
 import ohoraPackagingCover from "../../imports/ohora-packaging-mockups.png";
-import ohoraPackagingFull from "../../imports/ohora-packaging-mockups";
+import ohoraPackagingFull from "../../imports/ohora-packaging-mockups.png";
 import ohoraPosterFull from "../../imports/ohora-endless-summer-poster.png";
 import ohoraBillboardFull from "../../imports/ohora-endless-summer-billboard.png";
 import ohoraProposalCover from "../../imports/ohora-proposal-overview.png";
