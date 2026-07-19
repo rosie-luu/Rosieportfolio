@@ -13,6 +13,18 @@ import imgBarkBuddy from "../../imports/BarkBuddy.png";
 import imgMoonDrawer from "../../imports/moondrawer.png";
 import imgMetroPets from "../../imports/Metropets.png";
 
+// ohora Brand & Creative Direction Case Study
+import ohoraBrandBoardCover from "../../imports/ohora-brand-board.png";
+import ohoraBrandBoardFull from "../../imports/ohora-brand-board.png";
+import ohoraSocialCover from "../../imports/ohora-social-creatives.png";
+import ohoraSocialFull from "../../imports/ohora-social-creatives.png";
+import ohoraPackagingCover from "../../imports/ohora-packaging-mockups.png";
+import ohoraPackagingFull from "../../imports/ohora-packaging-mockups";
+import ohoraPosterFull from "../../imports/ohora-endless-summer-poster.png";
+import ohoraBillboardFull from "../../imports/ohora-endless-summer-billboard.png";
+import ohoraProposalCover from "../../imports/ohora-proposal-overview.png";
+import ohoraProposalFull from "../../imports/ohora-proposal-overview.png";
+
 type ThemeType = 'peach' | 'lavender' | 'mint' | 'rose' | 'blue';
 
 const themes: Record<ThemeType, { bg: string; border: string; text: string; iconText: string; gradient: string; badge: string; placeholder: string; buttonHover: string }> = {
@@ -102,7 +114,47 @@ const labCategories = [
     ]
   },
   {
-    title: "II. Capstone Project",
+    title: "II. Brand & Creative Direction",
+    subtitle: "Self-directed brand systems, built end-to-end from identity to campaign.",
+    projects: [
+      {
+        course: "Independent Creative Direction Project",
+        title: "ohora: Endless Summer — Brand Identity & Campaign System",
+        goal: "Extending ohora's brand into a full identity system, then scaling it into a complete summer campaign — from logo guidelines to a 14x48ft billboard.",
+        descriptionTitle: "The Context",
+        description: "A self-directed brand system for ohora, the gel-nail-strip brand. Starting with a full identity foundation — logo, color, type, voice, and packaging guidelines — the project then extends that system into a real campaign: social creatives, retail packaging, an outdoor billboard, a campaign poster, and a creative pitch deck, showing how one identity scales cleanly across every touchpoint.",
+        insightTitle: "Strategic Insight",
+        insight: [
+          "Practiced **brand thinking end-to-end**: defining the rules first, then proving they hold up across a dozen very different formats.",
+          "Learned to **package creative work for a client pitch** — translating design decisions into a proposal a marketing team could greenlight."
+        ],
+        executionTitle: "Execution",
+        execution: [
+          "Built a full **brand identity system**: logo lockups, color palette, typography, mascot, voice & tone.",
+          "Extended the identity into a **social content system** with six repeatable, on-brand post formats.",
+          "Designed a **packaging mockup system** covering retail boxes and the full unboxing experience.",
+          "Produced campaign-ready **out-of-home artwork** — a poster and a 14x48ft billboard — plus a **creative pitch deck** presenting the whole system."
+        ],
+        tags: [
+          { name: "Brand Identity", icon: PenTool },
+          { name: "Art Direction", icon: ImageIcon },
+          { name: "Campaign Design", icon: Sparkles }
+        ],
+        theme: "rose" as ThemeType,
+        icon: PenTool,
+        gallery: [
+          { label: "Brand Identity Board", cover: ohoraBrandBoardCover, full: ohoraBrandBoardFull },
+          { label: "Social Campaign Creatives", cover: ohoraSocialCover, full: ohoraSocialFull },
+          { label: "Packaging Mockup System", cover: ohoraPackagingCover, full: ohoraPackagingFull },
+          { label: "Campaign Poster", cover: ohoraPosterFull, full: ohoraPosterFull },
+          { label: "Billboard Artwork", cover: ohoraBillboardFull, full: ohoraBillboardFull },
+          { label: "Creative System Proposal", cover: ohoraProposalCover, full: ohoraProposalFull }
+        ]
+      }
+    ]
+  },
+  {
+    title: "III. Capstone Project",
     subtitle: "Industry collaborations and major academic milestones.",
     projects: [
       {
@@ -136,7 +188,7 @@ const labCategories = [
     ]
   },
   {
-    title: "III. Creative AI & Future Concepts",
+    title: "IV. Creative AI & Future Concepts",
     subtitle: "Exploring how AI can enhance creativity and personal privacy.",
     projects: [
       {
@@ -278,7 +330,7 @@ const labCategories = [
     ]
   },
   {
-    title: "IV. Web Development & UX Design",
+    title: "V. Web Development & UX Design",
     subtitle: "Bridging the gap between marketing strategy and technical execution.",
     projects: [
       {
@@ -389,7 +441,7 @@ const labCategories = [
     ]
   },
   {
-    title: "V. Game & Prototyping",
+    title: "VI. Game & Prototyping",
     subtitle: "Applying narrative logic and balancing to interactive experiences.",
     projects: [
       {
@@ -432,6 +484,122 @@ const renderBoldText = (text: string) => {
     return <span key={i}>{part}</span>;
   });
 };
+
+const ProjectContent = ({ project, isFullWidth }: { project: any; isFullWidth: boolean }) => (
+  <div className={`p-6 sm:p-8 flex flex-col grow ${isFullWidth ? 'lg:w-7/12 lg:justify-center' : 'w-full'}`}>
+    <div className="flex flex-wrap items-center gap-2 mb-4">
+      <span className="px-3 py-1.5 rounded-full text-xs font-bold bg-slate-100/80 text-slate-600 backdrop-blur-sm border border-slate-200/50 shadow-sm">
+        {project.course}
+      </span>
+    </div>
+
+    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 leading-tight group-hover:text-slate-800 transition-colors">
+      {project.title}
+    </h3>
+
+    <div className="space-y-6 grow">
+      {/* The Goal / Tagline */}
+      {project.goal && (
+        <div>
+          <p className="text-slate-700 font-bold leading-relaxed text-sm sm:text-base italic">
+            {project.goal}
+          </p>
+        </div>
+      )}
+
+      {/* The Description */}
+      {project.descriptionTitle && project.description && (
+        <div>
+          <h4 className="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">
+            <PenTool size={14} className={themes[project.theme as ThemeType].iconText} />
+            {project.descriptionTitle}
+          </h4>
+          {Array.isArray(project.description) ? (
+            <ul className="list-disc list-outside pl-5 space-y-2 text-slate-600 leading-relaxed text-sm sm:text-base">
+              {project.description.map((item: string, i: number) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+              {project.description}
+            </p>
+          )}
+        </div>
+      )}
+
+      {/* The Insight */}
+      {project.insightTitle && project.insight && (
+        <div className={`p-5 rounded-2xl ${themes[project.theme as ThemeType].bg} ${themes[project.theme as ThemeType].border} border`}>
+          <h4 className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">
+            <Lightbulb size={14} className={themes[project.theme as ThemeType].iconText} />
+            {project.insightTitle}
+          </h4>
+          {Array.isArray(project.insight) ? (
+            <ul className={`list-disc list-outside pl-4 space-y-2 text-sm leading-relaxed ${themes[project.theme as ThemeType].text}`}>
+              {project.insight.map((item: string, i: number) => (
+                <li key={i} className="font-medium text-slate-700/90">{renderBoldText(item)}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className={`text-sm leading-relaxed font-medium text-slate-700/90 ${themes[project.theme as ThemeType].text}`}>
+              {renderBoldText(project.insight)}
+            </p>
+          )}
+        </div>
+      )}
+
+      {/* The Execution */}
+      {project.executionTitle && project.execution && (
+        <div className={`p-5 rounded-2xl bg-white/60 border-slate-200/60 border mt-auto`}>
+          <h4 className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">
+            <Target size={14} className={themes[project.theme as ThemeType].iconText} />
+            {project.executionTitle}
+          </h4>
+          {Array.isArray(project.execution) ? (
+            <ul className="list-disc list-outside pl-4 space-y-2 text-slate-600 text-sm sm:text-base leading-relaxed">
+              {project.execution.map((item: string, i: number) => (
+                <li key={i}>{renderBoldText(item)}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              {renderBoldText(project.execution)}
+            </p>
+          )}
+        </div>
+      )}
+    </div>
+
+    {/* Tools used / Tags */}
+    <div className="flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-slate-100">
+      <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mr-1">Tools:</span>
+      {project.tags.map((tag: any, i: number) => (
+        <span
+          key={i}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/60 border border-slate-200/60 text-xs font-bold text-slate-700 shadow-sm"
+        >
+          <tag.icon size={14} className={themes[project.theme as ThemeType].iconText} />
+          {tag.name}
+        </span>
+      ))}
+    </div>
+
+    {/* Action Button for Links (Mobile Friendly & Explicit) */}
+    {project.link && (
+      <div className="mt-8">
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-bold text-sm transition-all duration-300 ${themes[project.theme as ThemeType].badge} ${themes[project.theme as ThemeType].buttonHover} hover:shadow-md border ${themes[project.theme as ThemeType].border}`}
+        >
+          {project.linkText} <ExternalLink size={18} />
+        </a>
+      </div>
+    )}
+  </div>
+);
 
 export function Lab() {
   return (
@@ -477,6 +645,55 @@ export function Lab() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {category.projects.map((project: any, idx: number) => {
                 const isFullWidth = category.projects.length % 2 !== 0 && idx === 0;
+
+                if (project.gallery) {
+                  return (
+                    <motion.div
+                      key={project.title}
+                      initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 0.6, delay: idx * 0.1 }}
+                      className="group flex flex-col rounded-[2rem] overflow-hidden bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 lg:col-span-2"
+                    >
+                      {/* Horizontal Gallery Strip */}
+                      <div className="relative bg-slate-50/50 border-b border-slate-100 p-4 sm:p-6">
+                        <div className="flex items-center gap-2 mb-4">
+                          <div className={`p-2.5 rounded-xl bg-white shadow-sm border border-white ${themes[project.theme as ThemeType].iconText}`}>
+                            <project.icon size={20} />
+                          </div>
+                          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Case Study Gallery — click any piece to view full size</span>
+                        </div>
+                        <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-thin">
+                          {project.gallery.map((piece: any, gi: number) => (
+                            <a
+                              key={gi}
+                              href={piece.full}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group/g relative shrink-0 w-[240px] sm:w-[300px] aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm snap-start bg-white"
+                            >
+                              <img
+                                src={piece.cover}
+                                alt={piece.label}
+                                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover/g:scale-105"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent opacity-70 group-hover/g:opacity-90 transition-opacity duration-300" />
+                              <div className="absolute top-3 right-3 flex items-center justify-center w-8 h-8 bg-white/90 backdrop-blur-md text-slate-900 rounded-full shadow-md group-hover/g:scale-110 transition-all duration-300">
+                                <ExternalLink size={14} />
+                              </div>
+                              <span className="absolute bottom-3 left-3 right-3 text-white text-sm font-bold leading-tight drop-shadow-sm">
+                                {piece.label}
+                              </span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+
+                      <ProjectContent project={project} isFullWidth={false} />
+                    </motion.div>
+                  );
+                }
 
                 return (
                   <motion.div
@@ -557,119 +774,7 @@ export function Lab() {
                     )}
 
                     {/* Content Area */}
-                    <div className={`p-6 sm:p-8 flex flex-col grow ${isFullWidth ? 'lg:w-7/12 lg:justify-center' : 'w-full'}`}>
-                      <div className="flex flex-wrap items-center gap-2 mb-4">
-                        <span className="px-3 py-1.5 rounded-full text-xs font-bold bg-slate-100/80 text-slate-600 backdrop-blur-sm border border-slate-200/50 shadow-sm">
-                          {project.course}
-                        </span>
-                      </div>
-
-                      <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 leading-tight group-hover:text-slate-800 transition-colors">
-                        {project.title}
-                      </h3>
-
-                      <div className="space-y-6 grow">
-                        {/* The Goal / Tagline */}
-                        {project.goal && (
-                          <div>
-                            <p className="text-slate-700 font-bold leading-relaxed text-sm sm:text-base italic">
-                              {project.goal}
-                            </p>
-                          </div>
-                        )}
-
-                        {/* The Description */}
-                        {project.descriptionTitle && project.description && (
-                          <div>
-                            <h4 className="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">
-                              <PenTool size={14} className={themes[project.theme as ThemeType].iconText} />
-                              {project.descriptionTitle}
-                            </h4>
-                            {Array.isArray(project.description) ? (
-                              <ul className="list-disc list-outside pl-5 space-y-2 text-slate-600 leading-relaxed text-sm sm:text-base">
-                                {project.description.map((item: string, i: number) => (
-                                  <li key={i}>{item}</li>
-                                ))}
-                              </ul>
-                            ) : (
-                              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                                {project.description}
-                              </p>
-                            )}
-                          </div>
-                        )}
-
-                        {/* The Insight */}
-                        {project.insightTitle && project.insight && (
-                          <div className={`p-5 rounded-2xl ${themes[project.theme as ThemeType].bg} ${themes[project.theme as ThemeType].border} border`}>
-                            <h4 className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">
-                              <Lightbulb size={14} className={themes[project.theme as ThemeType].iconText} />
-                              {project.insightTitle}
-                            </h4>
-                            {Array.isArray(project.insight) ? (
-                              <ul className={`list-disc list-outside pl-4 space-y-2 text-sm leading-relaxed ${themes[project.theme as ThemeType].text}`}>
-                                {project.insight.map((item: string, i: number) => (
-                                  <li key={i} className="font-medium text-slate-700/90">{renderBoldText(item)}</li>
-                                ))}
-                              </ul>
-                            ) : (
-                              <p className={`text-sm leading-relaxed font-medium text-slate-700/90 ${themes[project.theme as ThemeType].text}`}>
-                                {renderBoldText(project.insight)}
-                              </p>
-                            )}
-                          </div>
-                        )}
-
-                        {/* The Execution */}
-                        {project.executionTitle && project.execution && (
-                          <div className={`p-5 rounded-2xl bg-white/60 border-slate-200/60 border mt-auto`}>
-                            <h4 className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">
-                              <Target size={14} className={themes[project.theme as ThemeType].iconText} />
-                              {project.executionTitle}
-                            </h4>
-                            {Array.isArray(project.execution) ? (
-                              <ul className="list-disc list-outside pl-4 space-y-2 text-slate-600 text-sm sm:text-base leading-relaxed">
-                                {project.execution.map((item: string, i: number) => (
-                                  <li key={i}>{renderBoldText(item)}</li>
-                                ))}
-                              </ul>
-                            ) : (
-                              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                                {renderBoldText(project.execution)}
-                              </p>
-                            )}
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Tools used / Tags */}
-                      <div className="flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-slate-100">
-                        <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mr-1">Tools:</span>
-                        {project.tags.map((tag: any, i: number) => (
-                          <span
-                            key={i}
-                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/60 border border-slate-200/60 text-xs font-bold text-slate-700 shadow-sm"
-                          >
-                            <tag.icon size={14} className={themes[project.theme as ThemeType].iconText} />
-                            {tag.name}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* Action Button for Links (Mobile Friendly & Explicit) */}
-                      {project.link && (
-                        <div className="mt-8">
-                          <a 
-                            href={project.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className={`flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-bold text-sm transition-all duration-300 ${themes[project.theme as ThemeType].badge} ${themes[project.theme as ThemeType].buttonHover} hover:shadow-md border ${themes[project.theme as ThemeType].border}`}
-                          >
-                            {project.linkText} <ExternalLink size={18} />
-                          </a>
-                        </div>
-                      )}
-                    </div>
+                    <ProjectContent project={project} isFullWidth={isFullWidth} />
                   </motion.div>
                 );
               })}
