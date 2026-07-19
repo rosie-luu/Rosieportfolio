@@ -82,7 +82,51 @@ const themes: Record<ThemeType, { bg: string; border: string; text: string; icon
 
 const labCategories = [
   {
-    title: "I. XR & Real-Time 3D Production",
+    title: "I. Brand & Creative Direction",
+    subtitle: "Self-directed brand systems, built end-to-end from identity to campaign.",
+    projects: [
+      {
+        course: "Independent Creative Direction Project · AI-Assisted",
+        title: "ohora: Endless Summer, Brand Identity & Campaign System",
+        goal: "One brand system, scaled from logo guidelines to a 14x48ft billboard. AI-generated, art-directed by me.",
+        descriptionTitle: "The Context",
+        description: "Self-directed brand project for ohora, the gel nail strip brand. I audited their real channels, defined the design language, then built the full system: identity board, social creatives, packaging, poster, billboard, and a pitch deck. Assets were AI-generated as live HTML/CSS. I directed every round and refined the details myself.",
+        insightTitle: "Strategic Insight",
+        insight: [
+          "Set the **brand rules** first, then made every asset follow them. Rejected anything off-brand.",
+          "Used **AI** for research and production speed. Kept crops, hierarchy, and every creative call myself.",
+          "Extended the brand with one new signature asset, the **gel-strip die-cut window**, drawn from the product's own shape. New, but still unmistakably ohora."
+        ],
+        executionTitle: "Execution",
+        execution: [
+          "Reverse-engineered ohora's visual language from their **site, Instagram, and TikTok** into a full identity board.",
+          "Built a **social system** with six repeatable post formats based on their top-performing content.",
+          "Designed a **packaging system** around the die-cut strip window — one die line, production-ready.",
+          "Produced **OOH artwork**: campaign poster and 14x48ft billboard, re-art-directed across multiple rounds.",
+          "Refined layouts at **code level** and ran automated render checks before delivery."
+        ],
+        tags: [
+          { name: "Brand Identity", icon: PenTool },
+          { name: "Art Direction", icon: ImageIcon },
+          { name: "Campaign Design", icon: Sparkles },
+          { name: "AI Workflow", icon: Bot },
+          { name: "HTML/CSS", icon: Code2 }
+        ],
+        theme: "rose" as ThemeType,
+        icon: PenTool,
+        gallery: [
+          { label: "Brand Identity Board", cover: ohoraBrandBoardCover, full: ohoraBrandBoardFull },
+          { label: "Social Campaign Creatives", cover: ohoraSocialCover, full: ohoraSocialFull },
+          { label: "Packaging Mockup System", cover: ohoraPackagingCover, full: ohoraPackagingFull },
+          { label: "Campaign Poster", cover: ohoraPosterFull, full: ohoraPosterFull },
+          { label: "Billboard Artwork", cover: ohoraBillboardFull, full: ohoraBillboardFull },
+          { label: "Creative System Proposal", cover: ohoraProposalCover, full: ohoraProposalFull }
+        ]
+      }
+    ]
+  },
+  {
+    title: "II. XR & Real-Time 3D Production",
     subtitle: "Designing immersive, spatial experiences with VR/AR and real-time 3D tools.",
     projects: [
       {
@@ -110,46 +154,6 @@ const labCategories = [
         ],
         theme: "lavender" as ThemeType,
         icon: Box
-      }
-    ]
-  },
-  {
-    title: "II. Brand & Creative Direction",
-    subtitle: "Self-directed brand systems, built end-to-end from identity to campaign.",
-    projects: [
-      {
-        course: "Independent Creative Direction Project",
-        title: "ohora: Endless Summer — Brand Identity & Campaign System",
-        goal: "Extending ohora's brand into a full identity system, then scaling it into a complete summer campaign — from logo guidelines to a 14x48ft billboard.",
-        descriptionTitle: "The Context",
-        description: "A self-directed brand system for ohora, the gel-nail-strip brand. Starting with a full identity foundation — logo, color, type, voice, and packaging guidelines — the project then extends that system into a real campaign: social creatives, retail packaging, an outdoor billboard, a campaign poster, and a creative pitch deck, showing how one identity scales cleanly across every touchpoint.",
-        insightTitle: "Strategic Insight",
-        insight: [
-          "Practiced **brand thinking end-to-end**: defining the rules first, then proving they hold up across a dozen very different formats.",
-          "Learned to **package creative work for a client pitch** — translating design decisions into a proposal a marketing team could greenlight."
-        ],
-        executionTitle: "Execution",
-        execution: [
-          "Built a full **brand identity system**: logo lockups, color palette, typography, mascot, voice & tone.",
-          "Extended the identity into a **social content system** with six repeatable, on-brand post formats.",
-          "Designed a **packaging mockup system** covering retail boxes and the full unboxing experience.",
-          "Produced campaign-ready **out-of-home artwork** — a poster and a 14x48ft billboard — plus a **creative pitch deck** presenting the whole system."
-        ],
-        tags: [
-          { name: "Brand Identity", icon: PenTool },
-          { name: "Art Direction", icon: ImageIcon },
-          { name: "Campaign Design", icon: Sparkles }
-        ],
-        theme: "rose" as ThemeType,
-        icon: PenTool,
-        gallery: [
-          { label: "Brand Identity Board", cover: ohoraBrandBoardCover, full: ohoraBrandBoardFull },
-          { label: "Social Campaign Creatives", cover: ohoraSocialCover, full: ohoraSocialFull },
-          { label: "Packaging Mockup System", cover: ohoraPackagingCover, full: ohoraPackagingFull },
-          { label: "Campaign Poster", cover: ohoraPosterFull, full: ohoraPosterFull },
-          { label: "Billboard Artwork", cover: ohoraBillboardFull, full: ohoraBillboardFull },
-          { label: "Creative System Proposal", cover: ohoraProposalCover, full: ohoraProposalFull }
-        ]
       }
     ]
   },
@@ -620,7 +624,7 @@ export function Lab() {
             Where <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">Research Meets Reality.</span>
           </h1>
           <p className="text-xl text-slate-600 font-medium leading-relaxed max-w-3xl">
-            A collection of experimental projects, industry collaborations, and technical deep-dives from my Master of Digital Media at TMU.
+            A collection of experimental projects, industry collaborations, technical deep-dives, and hands-on experiments applying AI tools to real creative and marketing work — from my Master of Digital Media at TMU.
           </p>
         </motion.div>
       </section>
