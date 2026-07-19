@@ -87,10 +87,10 @@ const labCategories = [
     projects: [
       {
         course: "Independent Creative Direction Project · AI-Assisted",
-        title: "ohora: Endless Summer, Brand Identity & Campaign System",
+        title: "ohora: Brand Identity & Campaign System",
         goal: "One brand system, scaled from logo guidelines to a 14x48ft billboard. AI-generated, art-directed by me.",
         descriptionTitle: "The Context",
-        description: "Self-directed brand project for ohora, the gel nail strip brand. I audited their real channels, defined the design language, then built the full system: identity board, social creatives, packaging, poster, billboard, and a pitch deck. Assets were AI-generated as live HTML/CSS. I directed every round and refined the details myself.",
+        description: "Self-directed brand project for ohora, the gel nail strip category. I audited their real channels, defined the design language, then built the full system: identity board, social creatives, packaging, poster, billboard, and a pitch deck. Assets were AI-generated as live HTML/CSS. I directed every round and refined the details myself.",
         insightTitle: "Strategic Insight",
         insight: [
           "Set the **brand rules** first, then made every asset follow them. Rejected anything off-brand.",
