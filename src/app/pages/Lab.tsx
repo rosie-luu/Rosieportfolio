@@ -26,6 +26,7 @@ import ohoraProposalCover from "../../imports/ohoraCaseProposalCover.png";
 import ohoraProposalFull from "../../imports/ohora-proposal-overview.png";
 import ohoraBeautySpotVideo from "../../imports/ohora-beauty-spot.mp4";
 import ohoraBeautyStoryboard from "../../imports/ohora-beauty-storyboard.png";
+import ohoraBeautySpotThumbnail from "../../imports/s10.jpeg";
 
 type ThemeType = 'peach' | 'lavender' | 'mint' | 'rose' | 'blue';
 
@@ -153,7 +154,7 @@ const labCategories = [
         forceFullWidth: true,
         localVideo: {
           src: ohoraBeautySpotVideo,
-          poster: ohoraBeautyStoryboard
+          poster: ohoraBeautySpotThumbnail
         },
         link: ohoraBeautyStoryboard,
         linkText: "View Storyboard"
