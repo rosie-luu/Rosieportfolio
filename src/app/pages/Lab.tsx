@@ -24,6 +24,8 @@ import ohoraPosterFull from "../../imports/ohoraCasePoster.png";
 import ohoraBillboardFull from "../../imports/ohora-endless-summer-billboard.png";
 import ohoraProposalCover from "../../imports/ohoraCaseProposalCover.png";
 import ohoraProposalFull from "../../imports/ohora-proposal-overview.png";
+import ohoraBeautySpotVideo from "../../imports/ohora-beauty-spot.mp4";
+import ohoraBeautyStoryboard from "../../imports/ohora-beauty-storyboard.png";
 
 type ThemeType = 'peach' | 'lavender' | 'mint' | 'rose' | 'blue';
 
@@ -87,10 +89,10 @@ const labCategories = [
     projects: [
       {
         course: "Independent Creative Direction Project · AI-Assisted",
-        title: "ohora: Brand Identity & Campaign System",
+        title: "ohora: Endless Summer, Brand Identity & Campaign System",
         goal: "One brand system, scaled from logo guidelines to a 14x48ft billboard. AI-generated, art-directed by me.",
         descriptionTitle: "The Context",
-        description: "Self-directed brand project for ohora, the gel nail strip category. I audited their real channels, defined the design language, then built the full system: identity board, social creatives, packaging, poster, billboard, and a pitch deck. Assets were AI-generated as live HTML/CSS. I directed every round and refined the details myself.",
+        description: "Self-directed brand project for ohora, the gel nail strip brand. I audited their real channels, defined the design language, then built the full system: identity board, social creatives, packaging, poster, billboard, and a pitch deck. Assets were AI-generated as live HTML/CSS. I directed every round and refined the details myself.",
         insightTitle: "Strategic Insight",
         insight: [
           "Set the **brand rules** first, then made every asset follow them. Rejected anything off-brand.",
@@ -122,6 +124,39 @@ const labCategories = [
           { label: "Billboard Artwork", cover: ohoraBillboardFull, full: ohoraBillboardFull },
           { label: "Creative System Proposal", cover: ohoraProposalCover, full: ohoraProposalFull }
         ]
+      },
+      {
+        course: "Independent Project · AI Video Production",
+        title: "ohora: 30-Second AI Beauty Spot",
+        goal: "A product tutorial spot built through a full AI video pipeline — from reference research to final cut.",
+        descriptionTitle: "The Context",
+        description: "Reverse-engineered the shot language of professional beauty commercials — framing, lighting, ASMR sound — then rebuilt it as an AI production pipeline: research, prompt engineering, storyboarding, AI generation, and manual fixes on broken scenes.",
+        insightTitle: "Strategic Insight",
+        insight: [
+          "Treated AI as a **production tool, not a shortcut** — researched real commercial technique first, then engineered every prompt around it.",
+          "Knew where **AI generation breaks** and fixed it by hand — quality control, not blind output."
+        ],
+        executionTitle: "Execution",
+        execution: [
+          "Researched and adapted **shot, lighting, and ASMR sound design** from professional beauty commercials.",
+          "Engineered AI prompts and built a **10-scene storyboard** with timing, camera moves, and sound cues.",
+          "Generated the spot with AI video tools, then **manually corrected broken scenes** for the final cut."
+        ],
+        tags: [
+          { name: "AI Video Production", icon: Video },
+          { name: "Prompt Engineering", icon: Bot },
+          { name: "Storyboarding", icon: PenTool },
+          { name: "Sound Design", icon: AudioLines }
+        ],
+        theme: "lavender" as ThemeType,
+        icon: Video,
+        forceFullWidth: true,
+        localVideo: {
+          src: ohoraBeautySpotVideo,
+          poster: ohoraBeautyStoryboard
+        },
+        link: ohoraBeautyStoryboard,
+        linkText: "View Storyboard"
       }
     ]
   },
@@ -648,7 +683,7 @@ export function Lab() {
             {/* Category Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {category.projects.map((project: any, idx: number) => {
-                const isFullWidth = category.projects.length % 2 !== 0 && idx === 0;
+                const isFullWidth = project.forceFullWidth || (category.projects.length % 2 !== 0 && idx === 0);
 
                 if (project.gallery) {
                   return (
@@ -709,7 +744,21 @@ export function Lab() {
                     className={`group flex flex-col ${isFullWidth ? 'lg:flex-row' : ''} rounded-[2rem] overflow-hidden bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 ${isFullWidth ? 'lg:col-span-2' : ''}`}
                   >
                     {/* Dynamic Image Area */}
-                    {project.video ? (
+                    {project.localVideo ? (
+                      <div className={`relative ${isFullWidth ? 'w-full lg:w-5/12 lg:border-r lg:border-b-0 min-h-[300px]' : 'w-full aspect-video border-b'} bg-slate-900 border-slate-100 flex items-center justify-center overflow-hidden shrink-0`}>
+                        <video
+                          src={project.localVideo.src}
+                          poster={project.localVideo.poster}
+                          controls
+                          preload="metadata"
+                          playsInline
+                          className="w-full h-full object-cover"
+                        />
+                        <div className={`absolute top-4 left-4 p-3 rounded-2xl bg-white/90 backdrop-blur-md shadow-sm border border-white ${themes[project.theme as ThemeType].iconText} z-20 pointer-events-none`}>
+                          <project.icon size={24} />
+                        </div>
+                      </div>
+                    ) : project.video ? (
                       <div className={`relative ${isFullWidth ? 'w-full lg:w-5/12 lg:border-r lg:border-b-0 min-h-[300px]' : 'w-full aspect-video border-b'} bg-slate-900 border-slate-100 group/img flex items-center justify-center overflow-hidden shrink-0`}>
                         <a href={project.video.url} target="_blank" rel="noopener noreferrer" className="block relative w-full h-full cursor-pointer">
                           <img 
