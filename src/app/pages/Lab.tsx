@@ -188,9 +188,9 @@ const labCategories = [
         theme: "peach" as ThemeType,
         icon: Video,
         forceFullWidth: true,
-        localVideo: {
-          src: eleganceBlushVideo,
-          poster: eleganceBlushThumb
+        video: {
+          url: "https://drive.google.com/file/d/19jJRzv3nHghBnrc0Wa6DhML2y0TZ31AH/view?usp=sharing",
+          thumbnail: eleganceBlushThumb
         }
       }
     ]
