@@ -27,7 +27,6 @@ import ohoraProposalFull from "../../imports/ohora-proposal-overview.png";
 import ohoraBeautySpotVideo from "../../imports/ohora-beauty-spot.mp4";
 import ohoraBeautyStoryboard from "../../imports/ohora-beauty-storyboard.png";
 import ohoraBeautySpotThumbnail from "../../imports/s10.jpeg";
-import eleganceBlushVideo from "../../imports/elegance-blush-video.mp4";
 import eleganceBlushThumb from "../../imports/elegance-blush-thumb.png";
 
 type ThemeType = 'peach' | 'lavender' | 'mint' | 'rose' | 'blue';
