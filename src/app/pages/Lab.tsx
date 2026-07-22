@@ -129,7 +129,7 @@ const labCategories = [
       },
       {
         course: "Independent Project · AI Video Production",
-        title: "ohora: 30-Second AI Beauty Spot",
+        title: "ohora: 10-Second AI Beauty Spot",
         goal: "A product tutorial spot built through a full AI video pipeline — from reference research to final cut.",
         descriptionTitle: "The Context",
         description: "Reverse-engineered the shot language of professional beauty commercials — framing, lighting, ASMR sound — then rebuilt it as an AI production pipeline: research, prompt engineering, storyboarding, AI generation, and manual fixes on broken scenes.",
@@ -155,7 +155,7 @@ const labCategories = [
         forceFullWidth: true,
         localVideo: {
           src: ohoraBeautySpotVideo,
-          poster: ohoraBeautyStoryboard
+          poster: ohoraBeautySpotThumbnail
         },
         link: ohoraBeautyStoryboard,
         linkText: "View Storyboard"
