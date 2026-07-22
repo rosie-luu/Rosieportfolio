@@ -27,6 +27,8 @@ import ohoraProposalFull from "../../imports/ohora-proposal-overview.png";
 import ohoraBeautySpotVideo from "../../imports/ohora-beauty-spot.mp4";
 import ohoraBeautyStoryboard from "../../imports/ohora-beauty-storyboard.png";
 import ohoraBeautySpotThumbnail from "../../imports/s10.jpeg";
+import eleganceBlushVideo from "../../imports/elegance-blush-video.mp4";
+import eleganceBlushThumb from "../../imports/elegance-blush-thumb.png";
 
 type ThemeType = 'peach' | 'lavender' | 'mint' | 'rose' | 'blue';
 
@@ -128,7 +130,7 @@ const labCategories = [
       },
       {
         course: "Independent Project · AI Video Production",
-        title: "ohora: 10-Second AI Beauty Spot",
+        title: "ohora: 30-Second AI Beauty Spot",
         goal: "A product tutorial spot built through a full AI video pipeline — from reference research to final cut.",
         descriptionTitle: "The Context",
         description: "Reverse-engineered the shot language of professional beauty commercials — framing, lighting, ASMR sound — then rebuilt it as an AI production pipeline: research, prompt engineering, storyboarding, AI generation, and manual fixes on broken scenes.",
@@ -154,10 +156,42 @@ const labCategories = [
         forceFullWidth: true,
         localVideo: {
           src: ohoraBeautySpotVideo,
-          poster: ohoraBeautySpotThumbnail
+          poster: ohoraBeautyStoryboard
         },
         link: ohoraBeautyStoryboard,
         linkText: "View Storyboard"
+      },
+      {
+        course: "Independent Creative Direction Project · AI Video Production",
+        title: "Élégance: Nuage de Rose, AI Commercial Spot",
+        goal: "A full commercial ad for an imagined luxury blush brand — concept to final cut, built through an AI production pipeline.",
+        descriptionTitle: "The Context",
+        description: "Concept campaign for Élégance, an imagined luxury beauty brand, and its blush line 'Nuage de Rose.' Studied real luxury beauty commercials, defined the creative direction, then produced the spot end-to-end — brand visuals, AI-generated footage, and final edit.",
+        insightTitle: "Strategic Insight",
+        insight: [
+          "Built a **complete creative concept** — brand, product, and campaign — from a blank page, then directed AI tools to execute it.",
+          "Paired **prompt engineering with hands-on editing**: AI generated the raw footage, I directed sound and cut the final spot."
+        ],
+        executionTitle: "Execution",
+        execution: [
+          "Studied **luxury beauty commercial formulas** and set the creative direction for the spot.",
+          "Generated the **AI model and product visuals** to match the brand concept.",
+          "Wrote detailed prompts and generated footage with **AI video and SFX tools**.",
+          "Manually edited the final cut using **professional video editing tools**."
+        ],
+        tags: [
+          { name: "AI Video Production", icon: Video },
+          { name: "Creative Direction", icon: PenTool },
+          { name: "Prompt Engineering", icon: Bot },
+          { name: "Video Editing", icon: Play }
+        ],
+        theme: "peach" as ThemeType,
+        icon: Video,
+        forceFullWidth: true,
+        localVideo: {
+          src: eleganceBlushVideo,
+          poster: eleganceBlushThumb
+        }
       }
     ]
   },
