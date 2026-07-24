@@ -224,23 +224,20 @@ const labCategories = [
       },
       {
         course: "AI, XR & VP Tools (DG8010), Final Project",
-        title: "Moschino Toy 2 Bubble Gum: Bubble Pop, Virtual Production Commercial",
-        goal: "A 30-second fragrance commercial made entirely with virtual production — Unreal Engine 5, MetaHuman, markerless mocap, and AI-generated 3D assets. Solo project, from previs to final edit, by a marketer learning 3D.",
+        title: "Moschino Toy 2 Bubble Gum: "Bubble Pop" - Virtual Production Commercial",
+        goal: "A 30-second fragrance ad made solo in Unreal Engine 5. No studio, no set, no budget: a marketer learning 3D.",
         descriptionTitle: "The Context",
-        description: "Concept fragrance commercial for Moschino Toy 2 Bubble Gum, produced solo with virtual production tools — no studio, no set, no production budget. Turns the product into a candy world: a pastel pink stage, floating bubbles, and a MetaHuman model performing a K-pop routine before spraying the product. Built as a proof of concept for how small marketing teams could produce branded video content without traditional production costs. (Moschino and Toy 2 Bubble Gum are trademarks of their respective owners; created as a non-commercial concept for educational purposes.)",
+        description: "I made concept, previs, and full production of a candy-world commercial: a MetaHuman model performs a K-pop routine and sprays the product, all in a virtual pastel set.",
         insightTitle: "Strategic Insight",
         insight: [
           "Proved a **solo marketer with no 3D background** could produce a full virtual-production commercial in 3 weeks — no studio, no budget.",
-          "Used **AI-assisted asset creation** (image-to-3D, previs) to move fast, then relied on real cinematography and animation craft for the final polish.",
-          "Reframes virtual production as a **cost-efficient option for small marketing teams** needing branded video content, not just a 3D-artist exercise."
+          "Used **AI-assisted asset creation** (image-to-3D, previs) to move fast, then relied on real cinematography and animation craft for the final polish."
         ],
         executionTitle: "Execution",
         execution: [
-          "Wrote a full **production plan** and shot list, then generated **AI previs frames** for every shot before opening the engine.",
-          "Generated the product as a 3D asset from a single photo (**Meshy AI**) and modeled custom set pieces in Cinema 4D.",
-          "Captured and retargeted **markerless motion capture** onto a customized MetaHuman, animating the K-pop routine and product interaction.",
-          "Built the full sequence in **Unreal Engine 5** — cine cameras, beat-synced lighting, Movie Render Queue — then edited and sound-designed the final cut in CapCut."
-        ],
+          "AI previs and an image-to-3D product asset (Meshy) to move fast, custom set pieces in Cinema 4D.",
+          "Markerless mocap retargeted onto a customized MetaHuman.",
+          "Cine cameras, beat-synced lighting and render in UE5, final cut in CapCut"],
         tags: [
           { name: "Unreal Engine 5", icon: Cpu },
           { name: "Motion Capture", icon: Video },
