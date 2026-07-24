@@ -250,7 +250,7 @@ const labCategories = [
         theme: "blue" as ThemeType,
         icon: Video,
         video: {
-          url: "https://drive.google.com/drive/folders/1dkTjY5UzeVEi4Mpk-V5ULDteIcAVYAvZ",
+          url: "https://drive.google.com/file/d/1tn1vnA_tQK_XB0pbCf2eUBpNBb6iRzeu/view?usp=sharing",
           thumbnail: bubblePopThumb
         }
       }
