@@ -227,7 +227,7 @@ const labCategories = [
         title: 'Moschino Toy 2 Bubble Gum: "Bubble Pop" - Virtual Production Commercial',
         goal: "A 30-second fragrance ad made solo in Unreal Engine 5. No studio, no set, no budget: a marketer learning 3D.",
         descriptionTitle: "The Context",
-        description: "I made concept, previs, and full production of a candy-world commercial: a MetaHuman model performs a K-pop routine and sprays the product, all in a virtual pastel set.",
+        description: "I made the concept, previs, and full production of a candy-world commercial: a MetaHuman model performs a K-pop routine and sprays the product, all in a virtual pastel set.",
         insightTitle: "Strategic Insight",
         insight: [
           "Proved a **solo marketer with no 3D background** could produce a full virtual-production commercial in 3 weeks — no studio, no budget.",
@@ -235,9 +235,9 @@ const labCategories = [
         ],
         executionTitle: "Execution",
         execution: [
-          "AI previs and an image-to-3D product asset (Meshy) to move fast, custom set pieces in Cinema 4D.",
-          "Markerless mocap retargeted onto a customized MetaHuman.",
-          "Cine cameras, beat-synced lighting and render in UE5, final cut in CapCut"],
+          "AI previs and an **image-to-3D** product asset (Meshy) to move fast, custom set pieces in Cinema 4D.",
+          "**Markerless mocap** retargeted onto a customized MetaHuman.",
+          "Cine cameras, beat-synced **lighting** and render in UE5, final cut in CapCut"],
         tags: [
           { name: "Unreal Engine 5", icon: Cpu },
           { name: "Motion Capture", icon: Video },
