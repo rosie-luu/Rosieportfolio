@@ -126,7 +126,7 @@ export function Home() {
         >
           <Sparkles className="w-10 h-10 mx-auto text-violet-400 mb-6" />
           <p className="text-xl sm:text-2xl text-slate-700 leading-relaxed font-medium">
-            With over 5 years of experience in the Asian and North American markets, I’ve helped global brands scale through data-backed strategies. From driving 50% ROI in e-commerce to managing 10M+ impressions in gaming, I thrive where performance meets creativity.
+            With over 5 years of experience in the Asian and North American markets, I’ve helped global brands scale through data-backed strategies. From driving 50% ROI in e-commerce to managing 10M+ impressions in gaming, I thrive where performance meets creativity. Now I'm adding a new layer to that: AI-powered content production and immersive media, through my master's in digital media at TMU.
           </p>
         </motion.div>
       </section>
