@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, BarChart2, ShoppingCart, Users, PenTool, Sparkles, Layout as LayoutIcon } from "lucide-react";
+import { ArrowRight, BarChart2, ShoppingCart, Users, PenTool, Sparkles, Layout as LayoutIcon, Box } from "lucide-react";
 import { Link } from "react-router";
 
 // Project Images
@@ -37,6 +37,7 @@ const skills = [
   { name: "E-commerce & Analytics", detail: "Shopify, GA4, & Website Optimization", icon: <ShoppingCart size={24} />, color: "bg-violet-50 text-violet-700 border-violet-200" },
   { name: "Influencer & Content Strategy", detail: "End-to-end Creator Management", icon: <Users size={24} />, color: "bg-orange-50 text-orange-700 border-orange-200" },
   { name: "Digital Design", detail: "Figma Prototyping & UX/UI", icon: <LayoutIcon size={24} />, color: "bg-rose-50 text-rose-700 border-rose-200" },
+  { name: "AI & 3D Content Production", detail: "Unreal Engine, MetaHuman, Mocap & Generative AI", icon: <Box size={24} />, color: "bg-indigo-50 text-indigo-700 border-indigo-200", fullWidth: true },
 ];
 
 
@@ -144,7 +145,7 @@ export function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className={`flex items-start gap-5 p-6 rounded-3xl border bg-white/60 backdrop-blur-md shadow-sm hover:shadow-md transition-all ${skill.color}`}
+              className={`flex items-start gap-5 p-6 rounded-3xl border bg-white/60 backdrop-blur-md shadow-sm hover:shadow-md transition-all ${skill.color} ${skill.fullWidth ? 'md:col-span-2' : ''}`}
             >
               <div className="p-3 bg-white rounded-2xl shadow-sm">
                 {skill.icon}
