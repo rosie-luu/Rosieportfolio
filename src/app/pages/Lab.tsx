@@ -224,7 +224,7 @@ const labCategories = [
       },
       {
         course: "AI, XR & VP Tools (DG8010), Final Project",
-        title: "Moschino Toy 2 Bubble Gum: "Bubble Pop" - Virtual Production Commercial",
+        title: 'Moschino Toy 2 Bubble Gum: "Bubble Pop" - Virtual Production Commercial',
         goal: "A 30-second fragrance ad made solo in Unreal Engine 5. No studio, no set, no budget: a marketer learning 3D.",
         descriptionTitle: "The Context",
         description: "I made concept, previs, and full production of a candy-world commercial: a MetaHuman model performs a K-pop routine and sprays the product, all in a virtual pastel set.",
