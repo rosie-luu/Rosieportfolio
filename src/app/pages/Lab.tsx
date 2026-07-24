@@ -10,7 +10,6 @@ import imgAITarot from "../../imports/AItarot.png";
 import imgNPC from "../../imports/NPC.png";
 import imgLaunchpad from "../../imports/Launchpad.png";
 import imgBarkBuddy from "../../imports/BarkBuddy.png";
-import imgMoonDrawer from "../../imports/moondrawer.png";
 import imgMetroPets from "../../imports/Metropets.png";
 
 // ohora Brand & Creative Direction Case Study
@@ -28,6 +27,7 @@ import ohoraBeautySpotVideo from "../../imports/ohora-beauty-spot.mp4";
 import ohoraBeautyStoryboard from "../../imports/ohora-beauty-storyboard.png";
 import ohoraBeautySpotThumbnail from "../../imports/s10.jpeg";
 import eleganceBlushThumb from "../../imports/elegance-blush-thumb.png";
+import bubblePopThumb from "../../imports/bubble-pop-thumbnail.png";
 
 type ThemeType = 'peach' | 'lavender' | 'mint' | 'rose' | 'blue';
 
@@ -152,7 +152,6 @@ const labCategories = [
         ],
         theme: "lavender" as ThemeType,
         icon: Video,
-        forceFullWidth: true,
         localVideo: {
           src: ohoraBeautySpotVideo,
           poster: ohoraBeautySpotThumbnail
@@ -186,7 +185,6 @@ const labCategories = [
         ],
         theme: "peach" as ThemeType,
         icon: Video,
-        forceFullWidth: true,
         video: {
           url: "https://drive.google.com/file/d/19jJRzv3nHghBnrc0Wa6DhML2y0TZ31AH/view?usp=sharing",
           thumbnail: eleganceBlushThumb
@@ -223,40 +221,149 @@ const labCategories = [
         ],
         theme: "lavender" as ThemeType,
         icon: Box
+      },
+      {
+        course: "AI, XR & VP Tools (DG8010), Final Project",
+        title: "Moschino Toy 2 Bubble Gum: Bubble Pop, Virtual Production Commercial",
+        goal: "A 30-second fragrance commercial made entirely with virtual production — Unreal Engine 5, MetaHuman, markerless mocap, and AI-generated 3D assets. Solo project, from previs to final edit, by a marketer learning 3D.",
+        descriptionTitle: "The Context",
+        description: "Concept fragrance commercial for Moschino Toy 2 Bubble Gum, produced solo with virtual production tools — no studio, no set, no production budget. Turns the product into a candy world: a pastel pink stage, floating bubbles, and a MetaHuman model performing a K-pop routine before spraying the product. Built as a proof of concept for how small marketing teams could produce branded video content without traditional production costs. (Moschino and Toy 2 Bubble Gum are trademarks of their respective owners; created as a non-commercial concept for educational purposes.)",
+        insightTitle: "Strategic Insight",
+        insight: [
+          "Proved a **solo marketer with no 3D background** could produce a full virtual-production commercial in 3 weeks — no studio, no budget.",
+          "Used **AI-assisted asset creation** (image-to-3D, previs) to move fast, then relied on real cinematography and animation craft for the final polish.",
+          "Reframes virtual production as a **cost-efficient option for small marketing teams** needing branded video content, not just a 3D-artist exercise."
+        ],
+        executionTitle: "Execution",
+        execution: [
+          "Wrote a full **production plan** and shot list, then generated **AI previs frames** for every shot before opening the engine.",
+          "Generated the product as a 3D asset from a single photo (**Meshy AI**) and modeled custom set pieces in Cinema 4D.",
+          "Captured and retargeted **markerless motion capture** onto a customized MetaHuman, animating the K-pop routine and product interaction.",
+          "Built the full sequence in **Unreal Engine 5** — cine cameras, beat-synced lighting, Movie Render Queue — then edited and sound-designed the final cut in CapCut."
+        ],
+        tags: [
+          { name: "Unreal Engine 5", icon: Cpu },
+          { name: "Motion Capture", icon: Video },
+          { name: "AI 3D Generation", icon: Box },
+          { name: "Virtual Production", icon: Sparkles }
+        ],
+        theme: "blue" as ThemeType,
+        icon: Video,
+        video: {
+          url: "https://drive.google.com/drive/folders/1dkTjY5UzeVEi4Mpk-V5ULDteIcAVYAvZ",
+          thumbnail: bubblePopThumb
+        }
       }
     ]
   },
   {
-    title: "III. Capstone Project",
-    subtitle: "Industry collaborations and major academic milestones.",
+    title: "III. Web Development & UX Design",
+    subtitle: "Bridging the gap between marketing strategy and technical execution.",
     projects: [
       {
-        course: "Creative Execution",
-        title: "The Moon Drawer | Industry Partnership: CyberTrophy",
-        goal: "Crafting a 100-episode AR-driven narrative for a reflective digital experience.",
+        course: "Frontend Developer & UX Designer",
+        title: "MetroPets: Functional UX for Pet Adoption",
+        goal: "Building a donor-centric web experience with robust JavaScript validation.",
         descriptionTitle: "The Context",
-        description: "Designing a massive content ecosystem (100 episodes) for an AR app that balances reflective storytelling with game-based engagement.",
+        description: "Pet shelters rely on donations, but complex or broken forms lead to 'donor drop-off.' I needed to create a flow that was both aesthetically welcoming and technically foolproof.",
         insightTitle: "Strategic Insight",
         insight: [
-          "Integrated **AI into the creative workflow**, allowing a small team of 3 to produce **high-fidelity assets at an industry-scale volume**."
+          "Designed a donation system that guides users and prevents mistakes, ensuring a smooth and trustworthy experience."
         ],
         executionTitle: "Execution",
         execution: [
-          "Co-developed the **100-episode storyline** and world-building logic.",
-          "Concept sketching for **Characters and Trophies**.",
-          "Used AI tools to generate **3D model bases** and high-fidelity cover art.",
-          "Collaborated with developers to implement **AR mechanics** into the app."
+          "Designed a welcoming **UX flow** specifically tailored for potential donors.",
+          "Developed a **JavaScript-driven Donation Engine** from scratch.",
+          "Implemented **real-time validation** to prevent empty fields, invalid emails, and negative numbers."
         ],
         tags: [
-          { name: "AR Technology", icon: Box },
-          { name: "Gen-AI", icon: Sparkles },
-          { name: "Creative Writing", icon: Pen }
+          { name: "HTML/CSS", icon: Code2 },
+          { name: "JavaScript", icon: FileCode2 },
+          { name: "UI/UX", icon: Layout }
         ],
-        theme: "rose" as ThemeType,
-        icon: Sparkles,
-        image: imgMoonDrawer,
-        link: "https://www.continuum.social/",
-        linkText: "Live Demo"
+        theme: "mint" as ThemeType,
+        icon: Layout,
+        image: imgMetroPets,
+        link: "https://zxm3332872-glitch.github.io/MetroPets/donation.html",
+        linkText: "View Website"
+      },
+      {
+        course: "Coursework",
+        title: "ohora USA: Custom Web Feature",
+        goal: "To understand the 'engine under the hood' of e-commerce by building a functional web component from scratch.",
+        descriptionTitle: "The Context",
+        description: "I developed a custom product feature section for ohora's website using HTML and CSS. This allowed me to go beyond drag-and-drop editors and gain full control over the layout.",
+        insightTitle: "Strategic Insight",
+        insight: [
+          "Used custom code to go beyond standard templates, giving the brand more flexibility and better performance."
+        ],
+        executionTitle: "Execution",
+        execution: [
+          "Referenced layouts from various top-tier beauty websites for **structural inspiration**.",
+          "Custom-coded the entire feature section from scratch utilizing **HTML and CSS**.",
+          "Ensured the new component integrated seamlessly with the **existing site architecture**."
+        ],
+        tags: [
+          { name: "HTML/CSS", icon: Code2 },
+          { name: "Web Development", icon: FileCode2 }
+        ],
+        theme: "peach" as ThemeType,
+        icon: Code2,
+        image: imgOhora
+      },
+      {
+        course: "Coursework",
+        title: "Yahoo.com: Homepage Redesign",
+        goal: "To modernize a digital legacy brand for today's fast-paced users.",
+        descriptionTitle: "The Context",
+        description: "Using Figma, I re-engineered the layout of Yahoo's homepage. The focus was on improving the 'Information Hierarchy' - making sure the most important news and tools are easy to find without overwhelming the user.",
+        insightTitle: "Strategic Insight",
+        insight: [
+          "Simplified a cluttered homepage to make it feel modern and easy for anyone to use."
+        ],
+        executionTitle: "Execution",
+        execution: [
+          "Created a comprehensive, interactive **Figma prototype** of the redesigned homepage.",
+          "Conducted **usability testing sessions** to uncover navigation pain points and gather user insights.",
+          "Iterated on the prototype design based on **direct user feedback**."
+        ],
+        tags: [
+          { name: "Figma", icon: Figma },
+          { name: "UI/UX", icon: Layout },
+          { name: "Information Hierarchy", icon: Network }
+        ],
+        theme: "lavender" as ThemeType,
+        icon: Layout,
+        image: imgYahoo,
+        link: "https://yahoo-homepage.figma.site/",
+        linkText: "View Figma Site"
+      },
+      {
+        course: "Coursework",
+        title: "BarkBuddy: Pet Care App Prototype",
+        goal: "To design a user-friendly mobile solution for the modern pet owner.",
+        descriptionTitle: "The Context",
+        description: "I created a high-fidelity prototype of 'BarkBuddy,' an app that centralizes pet health tracking and community connection. I handled everything from user research and wireframing to the final interactive prototype in Figma.",
+        insightTitle: "Strategic Insight",
+        insight: [
+          "Organized complex features into a simple mobile app that feels intuitive and easy to navigate."
+        ],
+        executionTitle: "Execution",
+        execution: [
+          "Conducted initial **user research** to identify the core needs of modern pet owners.",
+          "Created **wireframes** to map out the application's central user flows.",
+          "Developed a final, high-fidelity **interactive prototype** within Figma, refining through usability testing."
+        ],
+        tags: [
+          { name: "UX Research", icon: Search },
+          { name: "Wireframing", icon: Box },
+          { name: "Prototyping", icon: Figma }
+        ],
+        theme: "mint" as ThemeType,
+        icon: Smartphone,
+        image: imgBarkBuddy,
+        link: "https://www.figma.com/proto/wq7PlQLL2oMvYGDVkZRmk2/BarkBuddy---A3?node-id=1-28&p=f&t=YeK2sk6WuicScXGZ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A28",
+        linkText: "Play Prototype"
       }
     ]
   },
@@ -403,118 +510,7 @@ const labCategories = [
     ]
   },
   {
-    title: "V. Web Development & UX Design",
-    subtitle: "Bridging the gap between marketing strategy and technical execution.",
-    projects: [
-      {
-        course: "Frontend Developer & UX Designer",
-        title: "MetroPets: Functional UX for Pet Adoption",
-        goal: "Building a donor-centric web experience with robust JavaScript validation.",
-        descriptionTitle: "The Context",
-        description: "Pet shelters rely on donations, but complex or broken forms lead to 'donor drop-off.' I needed to create a flow that was both aesthetically welcoming and technically foolproof.",
-        insightTitle: "Strategic Insight",
-        insight: [
-          "Designed a donation system that guides users and prevents mistakes, ensuring a smooth and trustworthy experience."
-        ],
-        executionTitle: "Execution",
-        execution: [
-          "Designed a welcoming **UX flow** specifically tailored for potential donors.",
-          "Developed a **JavaScript-driven Donation Engine** from scratch.",
-          "Implemented **real-time validation** to prevent empty fields, invalid emails, and negative numbers."
-        ],
-        tags: [
-          { name: "HTML/CSS", icon: Code2 },
-          { name: "JavaScript", icon: FileCode2 },
-          { name: "UI/UX", icon: Layout }
-        ],
-        theme: "mint" as ThemeType,
-        icon: Layout,
-        image: imgMetroPets,
-        link: "https://zxm3332872-glitch.github.io/MetroPets/donation.html",
-        linkText: "View Website"
-      },
-      {
-        course: "Coursework",
-        title: "ohora USA: Custom Web Feature",
-        goal: "To understand the 'engine under the hood' of e-commerce by building a functional web component from scratch.",
-        descriptionTitle: "The Context",
-        description: "I developed a custom product feature section for ohora's website using HTML and CSS. This allowed me to go beyond drag-and-drop editors and gain full control over the layout.",
-        insightTitle: "Strategic Insight",
-        insight: [
-          "Used custom code to go beyond standard templates, giving the brand more flexibility and better performance."
-        ],
-        executionTitle: "Execution",
-        execution: [
-          "Referenced layouts from various top-tier beauty websites for **structural inspiration**.",
-          "Custom-coded the entire feature section from scratch utilizing **HTML and CSS**.",
-          "Ensured the new component integrated seamlessly with the **existing site architecture**."
-        ],
-        tags: [
-          { name: "HTML/CSS", icon: Code2 },
-          { name: "Web Development", icon: FileCode2 }
-        ],
-        theme: "peach" as ThemeType,
-        icon: Code2,
-        image: imgOhora
-      },
-      {
-        course: "Coursework",
-        title: "Yahoo.com: Homepage Redesign",
-        goal: "To modernize a digital legacy brand for today's fast-paced users.",
-        descriptionTitle: "The Context",
-        description: "Using Figma, I re-engineered the layout of Yahoo's homepage. The focus was on improving the 'Information Hierarchy' - making sure the most important news and tools are easy to find without overwhelming the user.",
-        insightTitle: "Strategic Insight",
-        insight: [
-          "Simplified a cluttered homepage to make it feel modern and easy for anyone to use."
-        ],
-        executionTitle: "Execution",
-        execution: [
-          "Created a comprehensive, interactive **Figma prototype** of the redesigned homepage.",
-          "Conducted **usability testing sessions** to uncover navigation pain points and gather user insights.",
-          "Iterated on the prototype design based on **direct user feedback**."
-        ],
-        tags: [
-          { name: "Figma", icon: Figma },
-          { name: "UI/UX", icon: Layout },
-          { name: "Information Hierarchy", icon: Network }
-        ],
-        theme: "lavender" as ThemeType,
-        icon: Layout,
-        image: imgYahoo,
-        link: "https://yahoo-homepage.figma.site/",
-        linkText: "View Figma Site"
-      },
-      {
-        course: "Coursework",
-        title: "BarkBuddy: Pet Care App Prototype",
-        goal: "To design a user-friendly mobile solution for the modern pet owner.",
-        descriptionTitle: "The Context",
-        description: "I created a high-fidelity prototype of 'BarkBuddy,' an app that centralizes pet health tracking and community connection. I handled everything from user research and wireframing to the final interactive prototype in Figma.",
-        insightTitle: "Strategic Insight",
-        insight: [
-          "Organized complex features into a simple mobile app that feels intuitive and easy to navigate."
-        ],
-        executionTitle: "Execution",
-        execution: [
-          "Conducted initial **user research** to identify the core needs of modern pet owners.",
-          "Created **wireframes** to map out the application's central user flows.",
-          "Developed a final, high-fidelity **interactive prototype** within Figma, refining through usability testing."
-        ],
-        tags: [
-          { name: "UX Research", icon: Search },
-          { name: "Wireframing", icon: Box },
-          { name: "Prototyping", icon: Figma }
-        ],
-        theme: "mint" as ThemeType,
-        icon: Smartphone,
-        image: imgBarkBuddy,
-        link: "https://www.figma.com/proto/wq7PlQLL2oMvYGDVkZRmk2/BarkBuddy---A3?node-id=1-28&p=f&t=YeK2sk6WuicScXGZ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A28",
-        linkText: "Play Prototype"
-      }
-    ]
-  },
-  {
-    title: "VI. Game & Prototyping",
+    title: "V. Game & Prototyping",
     subtitle: "Applying narrative logic and balancing to interactive experiences.",
     projects: [
       {
@@ -795,10 +791,10 @@ export function Lab() {
                     ) : project.video ? (
                       <div className={`relative ${isFullWidth ? 'w-full lg:w-5/12 lg:border-r lg:border-b-0 min-h-[300px]' : 'w-full aspect-video border-b'} bg-slate-900 border-slate-100 group/img flex items-center justify-center overflow-hidden shrink-0`}>
                         <a href={project.video.url} target="_blank" rel="noopener noreferrer" className="block relative w-full h-full cursor-pointer">
-                          <img 
-                            src={project.video.thumbnail} 
-                            alt={project.title} 
-                            className="w-full h-full absolute inset-0 object-cover transition-transform duration-700 group-hover/img:scale-[1.05] opacity-80 group-hover/img:opacity-100" 
+                          <img
+                            src={project.video.thumbnail}
+                            alt={project.title}
+                            className="w-full h-full absolute inset-0 object-cover transition-transform duration-700 group-hover/img:scale-[1.05] opacity-80 group-hover/img:opacity-100"
                           />
                           <div className="absolute inset-0 flex items-center justify-center bg-slate-900/20 group-hover/img:bg-transparent transition-colors duration-500">
                             <div className="w-16 h-16 bg-white/90 backdrop-blur-md text-rose-600 rounded-full flex items-center justify-center shadow-2xl group-hover/img:scale-110 transition-transform duration-500">
@@ -814,10 +810,10 @@ export function Lab() {
                       <div className={`relative overflow-hidden ${project.title.includes('BarkBuddy') ? 'bg-mint-50/50' : 'bg-slate-50/50'} border-slate-100 group/img flex items-center justify-center shrink-0 ${isFullWidth ? 'w-full lg:w-5/12 lg:border-r lg:border-b-0 min-h-[300px]' : 'w-full aspect-video border-b'}`}>
                         {project.link ? (
                           <a href={project.link} target="_blank" rel="noopener noreferrer" className={`block relative w-full h-full cursor-pointer flex items-center justify-center ${project.title.includes('BarkBuddy') ? 'p-12 sm:p-16' : ''}`}>
-                            <img 
-                              src={project.image} 
-                              alt={project.title} 
-                              className={`block transition-transform duration-700 group-hover/img:scale-[1.03] ${project.title.includes('BarkBuddy') ? 'max-w-[200px] w-full h-auto object-contain mx-auto drop-shadow-xl relative z-10' : 'absolute inset-0 w-full h-full object-cover object-top'}`} 
+                            <img
+                              src={project.image}
+                              alt={project.title}
+                              className={`block transition-transform duration-700 group-hover/img:scale-[1.03] ${project.title.includes('BarkBuddy') ? 'max-w-[200px] w-full h-auto object-contain mx-auto drop-shadow-xl relative z-10' : 'absolute inset-0 w-full h-full object-cover object-top'}`}
                             />
                             {/* Permanent Click Indicator Top Right */}
                             <div className="absolute top-4 right-4 flex items-center justify-center w-10 h-10 bg-slate-900/40 backdrop-blur-md text-white rounded-full shadow-md group-hover/img:bg-slate-900 group-hover/img:scale-110 transition-all duration-300 z-20">
@@ -832,14 +828,14 @@ export function Lab() {
                           </a>
                         ) : (
                           <div className={`block relative w-full h-full flex items-center justify-center ${project.title.includes('BarkBuddy') ? 'p-12 sm:p-16' : ''}`}>
-                            <img 
-                              src={project.image} 
-                              alt={project.title} 
-                              className={`block transition-transform duration-700 group-hover/img:scale-[1.03] ${project.title.includes('BarkBuddy') ? 'max-w-[200px] w-full h-auto object-contain mx-auto drop-shadow-xl relative z-10' : 'absolute inset-0 w-full h-full object-cover object-top'}`} 
+                            <img
+                              src={project.image}
+                              alt={project.title}
+                              className={`block transition-transform duration-700 group-hover/img:scale-[1.03] ${project.title.includes('BarkBuddy') ? 'max-w-[200px] w-full h-auto object-contain mx-auto drop-shadow-xl relative z-10' : 'absolute inset-0 w-full h-full object-cover object-top'}`}
                             />
                           </div>
                         )}
-                        
+
                         {/* Floating Theme Icon */}
                         <div className={`absolute top-4 left-4 p-3 rounded-2xl bg-white/90 backdrop-blur-md shadow-sm border border-white ${themes[project.theme as ThemeType].iconText} z-20 pointer-events-none`}>
                           <project.icon size={24} />
