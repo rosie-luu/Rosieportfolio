@@ -29,6 +29,22 @@ import ohoraBeautySpotThumbnail from "../../imports/s10.jpeg";
 import eleganceBlushThumb from "../../imports/elegance-blush-thumb.png";
 import bubblePopThumb from "../../imports/bubble-pop-thumbnail.png";
 
+// Bliss Premium Gelato: THE DUAL-LAUNCH, 14-Day Social Campaign
+import blissDay1 from "../../imports/bliss-day1.png";
+import blissDay2 from "../../imports/bliss-day2.jpeg";
+import blissDay3 from "../../imports/bliss-day3.jpeg";
+import blissDay4 from "../../imports/bliss-day4.jpeg";
+import blissDay5Video from "../../imports/bliss-day5-video-thumb.jpg";
+import blissDay6 from "../../imports/bliss-day6.jpeg";
+import blissDay7 from "../../imports/bliss-day7.jpeg";
+import blissDay8 from "../../imports/bliss-day8.jpeg";
+import blissDay9Video from "../../imports/bliss-day9-video-thumb.jpg";
+import blissDay10 from "../../imports/bliss-day10.jpeg";
+import blissDay11 from "../../imports/bliss-day11.jpeg";
+import blissDay12 from "../../imports/bliss-day12.jpeg";
+import blissDay13 from "../../imports/bliss-day13.jpeg";
+import blissDay14 from "../../imports/bliss-day14.jpeg";
+
 type ThemeType = 'peach' | 'lavender' | 'mint' | 'rose' | 'blue';
 
 const themes: Record<ThemeType, { bg: string; border: string; text: string; iconText: string; gradient: string; badge: string; placeholder: string; buttonHover: string }> = {
@@ -193,7 +209,59 @@ const labCategories = [
     ]
   },
   {
-    title: "II. XR & Real-Time 3D Production",
+    title: "II. Social Campaign Strategy & AI Production",
+    subtitle: "Full-funnel content planning for a real brand — strategy, copywriting, and AI-directed production for every post.",
+    projects: [
+      {
+        course: "Independent Case Study · AI Content Production",
+        title: 'Bliss Premium Gelato: "The Dual-Launch," 14-Day Social Campaign',
+        goal: "A real Saigon gelato brand's two-phase launch plan — content strategy, bilingual copywriting, and AI-generated visuals for all 14 days.",
+        descriptionTitle: "The Context",
+        description: "Bliss Premium Gelato needed to launch a new flavor without losing momentum on their bestseller. I built \"The Dual-Launch\": a 14-day content calendar split into two connected phases — Days 1–7 sustain demand for Matcha, Days 8–14 launch Rhum Raisin — so the new product lands on an audience that's already paying attention. Every post was planned, written, and produced with AI image and video tools, directed against Bliss's real brand guidelines and product references.",
+        insightTitle: "Strategic Insight",
+        insight: [
+          "Sequenced the launch instead of running it cold: **7 days building demand** on an existing flavor before introducing the new one, so it launched into an already-warm audience.",
+          "Wrote all **14 days as one connected narrative** — origin story, product education, social proof, teaser, launch, comparison, CTA — not 14 disconnected posts.",
+          "Directed **AI image and video generation** against real brand guidelines and product references, keeping every asset on-brand without a studio shoot."
+        ],
+        executionTitle: "Execution",
+        execution: [
+          "Planned a **90/10 image-to-video content mix** (12 feed posts, 2 Story videos), mapping a distinct content angle to each day.",
+          "Wrote **bilingual (VN/EN) copy** for every post, keeping one consistent brand voice across both product lines.",
+          "Directed **AI-generated visuals** for all 14 assets, matched to Bliss's brand board and real product photography.",
+          "Packaged the plan as a **presentation deck** ready for client and stakeholder review."
+        ],
+        tags: [
+          { name: "Content Strategy", icon: Target },
+          { name: "Copywriting", icon: PenTool },
+          { name: "AI Image & Video", icon: Bot },
+          { name: "Social Campaign", icon: ImageIcon }
+        ],
+        theme: "mint" as ThemeType,
+        icon: Target,
+        gallery: [
+          { label: "Day 1 — Brand Origin Story", cover: blissDay1, full: blissDay1 },
+          { label: "Day 2 — Product Education: Matcha", cover: blissDay2, full: blissDay2 },
+          { label: "Day 3 — Process: Why It's So Smooth", cover: blissDay3, full: blissDay3 },
+          { label: "Day 4 — Founder Story", cover: blissDay4, full: blissDay4 },
+          { label: "Day 5 — Story Video: Matcha", cover: blissDay5Video, full: "https://drive.google.com/file/d/1qCazjBOqLzEYqRW3Gohh_MewvmjJslia/view?usp=sharing" },
+          { label: "Day 6 — Social Proof", cover: blissDay6, full: blissDay6 },
+          { label: "Day 7 — Launch Teaser", cover: blissDay7, full: blissDay7 },
+          { label: "Day 8 — Product Launch: Rhum Raisin", cover: blissDay8, full: blissDay8 },
+          { label: "Day 9 — Launch Video: Rhum Raisin", cover: blissDay9Video, full: "https://drive.google.com/file/d/1e1iqKmXrgLMk_adClNxkF9DNoTvkxtsh/view?usp=sharing" },
+          { label: "Day 10 — Process: Small-Batch Rum Raisins", cover: blissDay10, full: blissDay10 },
+          { label: "Day 11 — Lifestyle Moment", cover: blissDay11, full: blissDay11 },
+          { label: "Day 12 — Behind the Scenes", cover: blissDay12, full: blissDay12 },
+          { label: "Day 13 — Engagement: Pick a Side", cover: blissDay13, full: blissDay13 },
+          { label: "Day 14 — Combo CTA", cover: blissDay14, full: blissDay14 }
+        ],
+        link: "https://docs.google.com/presentation/d/1UKU7zDHvoj70wgeOjwte3aI_c5genHD8qIwruAl5C98/view",
+        linkText: "View Full Campaign Deck"
+      }
+    ]
+  },
+  {
+    title: "III. XR & Real-Time 3D Production",
     subtitle: "Designing immersive, spatial experiences with VR/AR and real-time 3D tools.",
     projects: [
       {
@@ -254,7 +322,7 @@ const labCategories = [
     ]
   },
   {
-    title: "III. Web Development & UX Design",
+    title: "IV. Web Development & UX Design",
     subtitle: "Bridging the gap between marketing strategy and technical execution.",
     projects: [
       {
@@ -365,7 +433,7 @@ const labCategories = [
     ]
   },
   {
-    title: "IV. Creative AI & Future Concepts",
+    title: "V. Creative AI & Future Concepts",
     subtitle: "Exploring how AI can enhance creativity and personal privacy.",
     projects: [
       {
@@ -507,7 +575,7 @@ const labCategories = [
     ]
   },
   {
-    title: "V. Game & Prototyping",
+    title: "VI. Game & Prototyping",
     subtitle: "Applying narrative logic and balancing to interactive experiences.",
     projects: [
       {
